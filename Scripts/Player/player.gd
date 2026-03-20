@@ -3,7 +3,7 @@ extends Node2D
 # Determines how fast the Player will move
 var speed : float = 350
 
-
+@onready var animated_sprite_2d: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -23,6 +23,14 @@ func _process(delta: float) -> void:
 		direction.y += 1
 	if Input.is_action_pressed("move_up"):
 		direction.y -= 1
+	if direction != Vector2.ZERO:
+		animated_sprite_2d.play("walk")
+		if direction.x <0:
+			animated_sprite_2d.flip_h = true
+		else:
+			animated_sprite_2d.flip_h = false
+	else:
+		animated_sprite_2d.play("idle_down")
 	
 	position += direction.normalized() * speed * delta
 	pass
