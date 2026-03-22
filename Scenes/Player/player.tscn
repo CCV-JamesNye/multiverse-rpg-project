@@ -367,7 +367,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0jl8"]
-size = Vector2(40, 61)
+size = Vector2(40, 25)
 
 [node name="Player" type="CharacterBody2D" unique_id=642040466]
 collision_layer = 2
@@ -380,5 +380,5 @@ sprite_frames = SubResource("SpriteFrames_gk6dx")
 animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=139677064]
-position = Vector2(0, -25.5)
+position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_f0jl8")
