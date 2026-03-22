@@ -43,7 +43,7 @@ func _process(delta: float) -> void:
 		direction.y = 0
 	
 	position += direction.normalized() * speed * delta
-	move_and_slide()
+	move_and_collide(velocity * delta)
 	pass
 
 func play_anim(movement):

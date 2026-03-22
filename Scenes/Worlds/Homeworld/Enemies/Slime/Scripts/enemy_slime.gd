@@ -5,4 +5,4 @@ var facing = "none"
 enum state {IDLE, PATROL, CHASE}
 var current_state : state = state.IDLE
 func _physics_process(delta: float) -> void:
-	move_and_slide()
+	move_and_collide(velocity * delta)
