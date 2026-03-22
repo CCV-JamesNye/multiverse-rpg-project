@@ -1,9 +1,10 @@
-extends Node2D
+extends CharacterBody2D
 
 # Determines how fast the Player will move
 var speed : float = 350
+var facing = "none"
 
-@onready var animated_sprite_2d: AnimatedSprite2D = $CharacterBody2D/AnimatedSprite2D
+@onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -14,42 +15,59 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	# Stores current direction
 	var direction : Vector2 = Vector2.ZERO
-	var facing : Vector2
 	
 	# Reads input
 	if Input.is_action_pressed("move_right"):
+		facing = "right"
+		play_anim(1)
 		direction.x += 1
-		facing = Vector2.RIGHT
+		direction.y = 0
 	if Input.is_action_pressed("move_left"):
+		facing = "left"
+		play_anim(1)
 		direction.x -= 1
-		facing = Vector2.LEFT
+		direction.y = 0
 	if Input.is_action_pressed("move_down"):
+		facing = "down"
+		play_anim(1)
 		direction.y += 1
-		facing = Vector2.DOWN
+		direction.x = 0
 	if Input.is_action_pressed("move_up"):
+		facing = "up"
+		play_anim(1)
 		direction.y -= 1
-		facing = Vector2.UP
-	if direction != Vector2.ZERO:
-		if direction.y < 0:
-			animated_sprite_2d.play("walk_up")
-		elif direction.y > 0:
-			animated_sprite_2d.play("walk_down")
-		else:
-			animated_sprite_2d.play("walk")
-			if direction.x <0:
-				animated_sprite_2d.flip_h = true
-			else:
-				animated_sprite_2d.flip_h = false
-	else:
-		if Input.is_action_just_released("move_up"):
-			animated_sprite_2d.play("idle_up")
-		if Input.is_action_just_released("move_down"):
-			animated_sprite_2d.play("idle_down")
-		if Input.is_action_just_released("move_right"):
-			animated_sprite_2d.play("idle")
-		if Input.is_action_just_released("move_left"):
-			animated_sprite_2d.play("idle")
-			animated_sprite_2d.flip_h = true
+		direction.x = 0
+	if !Input.is_anything_pressed():
+		play_anim(0)
+		direction.x = 0
+		direction.y = 0
 	
 	position += direction.normalized() * speed * delta
+	move_and_slide()
 	pass
+
+func play_anim(movement):
+	if facing == "right":
+		animated_sprite_2d.flip_h = false
+		if movement == 1:
+			animated_sprite_2d.play("walk_side")
+		elif movement == 0:
+			animated_sprite_2d.play("idle_side")
+	if facing == "left":
+		animated_sprite_2d.flip_h = true
+		if movement == 1:
+			animated_sprite_2d.play("walk_side")
+		elif movement == 0:
+			animated_sprite_2d.play("idle_side")
+	if facing == "up":
+		animated_sprite_2d.flip_h = false
+		if movement == 1:
+			animated_sprite_2d.play("walk_up")
+		elif movement == 0:
+			animated_sprite_2d.play("idle_up")
+	if facing == "down":
+		animated_sprite_2d.flip_h = false
+		if movement == 1:
+			animated_sprite_2d.play("walk_down")
+		elif movement == 0:
+			animated_sprite_2d.play("idle_down")
