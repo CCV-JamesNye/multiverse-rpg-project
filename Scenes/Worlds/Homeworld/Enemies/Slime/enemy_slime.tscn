@@ -284,3 +284,6 @@ animation = &"idle_down"
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715383869]
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_51wgi")
+
+[node name="WallDetector" type="RayCast2D" parent="." unique_id=269917672]
+target_position = Vector2(0, 3)
