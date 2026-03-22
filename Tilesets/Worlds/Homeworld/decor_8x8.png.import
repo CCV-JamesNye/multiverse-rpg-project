@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3gviovn5yasc"
-path="res://.godot/imported/decor_8x8.png-4dc7523e67bfa9badba64ace0c5dc250.ctex"
+path="res://.godot/imported/decor_8x8.png-88c6907327a45f406dc9b67b033b8116.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/Worlds/decor_8x8.png"
-dest_files=["res://.godot/imported/decor_8x8.png-4dc7523e67bfa9badba64ace0c5dc250.ctex"]
+source_file="res://Tilesets/Worlds/Homeworld/decor_8x8.png"
+dest_files=["res://.godot/imported/decor_8x8.png-88c6907327a45f406dc9b67b033b8116.ctex"]
 
 [params]
 

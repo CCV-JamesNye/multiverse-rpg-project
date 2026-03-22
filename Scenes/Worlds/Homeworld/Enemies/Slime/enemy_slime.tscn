@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://bb5alq2bl105f"]
 
 [ext_resource type="Texture2D" uid="uid://2f6hqeeh3ati" path="res://Sprites/Worlds/Homeworld/Slime/slime.png" id="1_6lwqa"]
+[ext_resource type="Script" uid="uid://7mr13a5uylp7" path="res://Scenes/Worlds/Homeworld/Enemies/Slime/Scripts/enemy_slime.gd" id="1_k15ny"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ouoo"]
 atlas = ExtResource("1_6lwqa")
@@ -110,6 +111,7 @@ size = Vector2(44, 33)
 [node name="Slime" type="CharacterBody2D" unique_id=1312114128]
 collision_layer = 4
 collision_mask = 3
+script = ExtResource("1_k15ny")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=608103925]
 position = Vector2(-4.7683716e-07, -22)
