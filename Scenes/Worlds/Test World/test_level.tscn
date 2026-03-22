@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://d3vrrpucovlfg" path="res://Tilesets/Worlds/plains.png" id="1_edb35"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="2_e81l0"]
-[ext_resource type="PackedScene" uid="uid://bb5alq2bl105f" path="res://Scenes/Worlds/Homeworld/Enemies/enemy_slime.tscn" id="2_r72nj"]
+[ext_resource type="PackedScene" uid="uid://bb5alq2bl105f" path="res://Scenes/Worlds/Homeworld/Enemies/Slime/enemy_slime.tscn" id="2_r72nj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6sxc"]
 texture = ExtResource("1_edb35")
@@ -72,7 +72,7 @@ tile_map_data = PackedByteArray("AAAAACcAAAABAAYAAAABACcAAAACAAYAAAACACcAAAACAAY
 tile_set = SubResource("TileSet_ithxq")
 
 [node name="Slime" parent="." unique_id=1312114128 instance=ExtResource("2_r72nj")]
-position = Vector2(568, 253)
+position = Vector2(550, 302)
 
 [node name="Player" parent="." unique_id=826490540 instance=ExtResource("2_e81l0")]
 position = Vector2(65, 75)
