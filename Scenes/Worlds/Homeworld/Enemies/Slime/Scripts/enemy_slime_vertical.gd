@@ -1,12 +1,21 @@
 extends CharacterBody2D
 
-@export var patrol_speed: float = 135.0
+@export var patrol_speed: float = 180.0
 var direction : Vector2 = Vector2.DOWN
 var facing = "down"
 enum state {IDLE, PATROL, CHASE}
-var current_state : state = state.CHASE
+var current_state : state = state.PATROL
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var wall_detector: RayCast2D = $WallDetector
+@onready var player_detector: Area2D = $PlayerDetector
+@onready var chase_timer: Timer = $ChaseTimer
+@onready var idle_timer: Timer = $IdleTimer
+
+func _ready() -> void:
+	player_detector.body_entered.connect(check_for_player)
+	player_detector.body_exited.connect(player_left)
+	chase_timer.timeout.connect(end_chase)
+	idle_timer.timeout.connect(start_patrol)
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -71,3 +80,20 @@ func handle_chase() -> void:
 		animated_sprite_2d.flip_h = true
 	velocity = direction * (patrol_speed * 2)
 	pass
+
+func check_for_player(body : Node2D) -> void:
+	if body is Player:
+		chase_timer.stop()
+		current_state = state.CHASE
+
+func player_left(body : Node2D) -> void:
+	if body is Player:
+		idle_timer.stop()
+		chase_timer.start()
+
+func end_chase() -> void:
+	current_state = state.IDLE
+	idle_timer.start()
+
+func start_patrol() -> void:
+	current_state = state.PATROL
