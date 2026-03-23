@@ -74,5 +74,11 @@ tile_set = SubResource("TileSet_ithxq")
 [node name="Slime" parent="." unique_id=1312114128 instance=ExtResource("2_r72nj")]
 position = Vector2(550, 302)
 
+[node name="Slime - Vertical" parent="." unique_id=1439659261 instance=ExtResource("2_r72nj")]
+position = Vector2(935, 359)
+
+[node name="Slime - Vertical2" parent="." unique_id=1394373249 instance=ExtResource("2_r72nj")]
+position = Vector2(200, 196)
+
 [node name="Player" parent="." unique_id=826490540 instance=ExtResource("2_e81l0")]
 position = Vector2(65, 75)
