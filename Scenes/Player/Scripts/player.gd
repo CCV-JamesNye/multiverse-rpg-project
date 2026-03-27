@@ -3,6 +3,8 @@ class_name Player extends CharacterBody2D
 # Determines how fast the Player will move
 var speed : float = 350
 var facing = "none"
+var plr_health : int = 10
+var max_plr_health : int = 10
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 

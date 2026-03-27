@@ -5,6 +5,7 @@ var direction : Vector2 = Vector2.DOWN
 var facing = "down"
 enum state {IDLE, PATROL, CHASE}
 var current_state : state = state.PATROL
+
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var wall_detector: RayCast2D = $WallDetector
 @onready var player_detector: Area2D = $PlayerDetector
