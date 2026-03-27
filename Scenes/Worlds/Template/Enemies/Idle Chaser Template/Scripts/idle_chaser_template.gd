@@ -5,7 +5,7 @@ var direction : Vector2 = Vector2.DOWN
 var facing = "down"
 enum state {IDLE, PATROL, CHASE}
 var current_state : state = state.IDLE
-var player_target = get_tree().get_first_node_in_group("player")
+var player_target = Player
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -14,6 +14,7 @@ var player_target = get_tree().get_first_node_in_group("player")
 @onready var idle_timer: Timer = $IdleTimer
 
 func _ready() -> void:
+	player_target = get_tree().get_first_node_in_group("player")
 	player_detector.body_entered.connect(check_for_player)
 	player_detector.body_exited.connect(player_left)
 	chase_timer.timeout.connect(end_chase)
