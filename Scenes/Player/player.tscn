@@ -367,9 +367,12 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0jl8"]
-size = Vector2(40, 25)
+size = Vector2(40, 10)
 
-[node name="Player" type="CharacterBody2D" unique_id=642040466 groups=["player"]]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
+size = Vector2(40, 10)
+
+[node name="Player" type="CharacterBody2D" unique_id=642040466]
 collision_layer = 2
 collision_mask = 5
 script = ExtResource("1_a3d8c")
@@ -381,13 +384,12 @@ sprite_frames = SubResource("SpriteFrames_gk6dx")
 animation = &"idle_down"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=139677064]
-visible = false
-position = Vector2(0, -7.5)
+position = Vector2(0, -5)
 shape = SubResource("RectangleShape2D_f0jl8")
 
 [node name="Hurtbox" type="Area2D" parent="." unique_id=1932044046]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1399860317]
-position = Vector2(0, -7.5)
-shape = SubResource("RectangleShape2D_f0jl8")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=605629464]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_a3d8c")
 debug_color = Color(0, 0.5058824, 0.25490198, 0.41960785)
