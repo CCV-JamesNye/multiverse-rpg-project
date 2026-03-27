@@ -380,6 +380,14 @@ scale = Vector2(2.7083333, 2.7083333)
 sprite_frames = SubResource("SpriteFrames_gk6dx")
 animation = &"idle_down"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=139677064]
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=139677064]
+visible = false
 position = Vector2(0, -7.5)
 shape = SubResource("RectangleShape2D_f0jl8")
+
+[node name="Hurtbox" type="Area2D" parent="." unique_id=1932044046]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=1399860317]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_f0jl8")
+debug_color = Color(0, 0.5058824, 0.25490198, 0.41960785)
