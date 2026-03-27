@@ -5,9 +5,10 @@ var direction : Vector2 = Vector2.DOWN
 var facing = "down"
 enum state {IDLE, PATROL, CHASE}
 var current_state : state = state.IDLE
+var player_target = get_tree().get_first_node_in_group("player")
 
+@onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var wall_detector: RayCast2D = $WallDetector
 @onready var player_detector: Area2D = $PlayerDetector
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
@@ -28,17 +29,6 @@ func _physics_process(delta: float) -> void:
 			handle_chase()
 	
 	move_and_collide(velocity * delta)
-	if wall_detector.is_colliding():
-		if direction == Vector2.DOWN:
-			direction = Vector2.UP
-			facing = "up"
-			wall_detector.position.y = -15
-			wall_detector.rotate(deg_to_rad(180))
-		elif direction == Vector2.UP:
-			direction = Vector2.DOWN
-			facing = "down"
-			wall_detector.position.y = 0
-			wall_detector.rotate(deg_to_rad(180))
 
 func handle_idle() -> void:
 	if facing == "down":
@@ -69,6 +59,8 @@ func handle_patrol() -> void:
 	pass
 
 func handle_chase() -> void:
+	direction = player_target.global_position - collision_shape_2d.global_position
+	
 	if facing == "down":
 		animated_sprite_2d.play("run_down")
 	elif facing == "up":

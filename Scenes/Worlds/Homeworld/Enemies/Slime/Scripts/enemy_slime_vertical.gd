@@ -28,6 +28,7 @@ func _physics_process(delta: float) -> void:
 			handle_chase()
 	
 	move_and_collide(velocity * delta)
+	
 	if wall_detector.is_colliding():
 		if direction == Vector2.DOWN:
 			direction = Vector2.UP

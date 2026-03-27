@@ -3,7 +3,6 @@
 [ext_resource type="Texture2D" uid="uid://d3vrrpucovlfg" path="res://Tilesets/Worlds/Homeworld/plains.png" id="1_edb35"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="2_e81l0"]
 [ext_resource type="PackedScene" uid="uid://bb5alq2bl105f" path="res://Scenes/Worlds/Homeworld/Enemies/Slime/enemy_slime_vertical.tscn" id="2_r72nj"]
-[ext_resource type="PackedScene" uid="uid://dcdc7vbba1h20" path="res://Scenes/Worlds/Template/Enemies/Idle Chaser Template/idle_chaser_template.tscn" id="4_bgdui"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6sxc"]
 texture = ExtResource("1_edb35")
@@ -80,6 +79,3 @@ position = Vector2(935, 359)
 
 [node name="Player" parent="." unique_id=826490540 instance=ExtResource("2_e81l0")]
 position = Vector2(65, 75)
-
-[node name="Idle Chaser Template" parent="." unique_id=194615570 instance=ExtResource("4_bgdui")]
-position = Vector2(258, 245)
