@@ -84,7 +84,7 @@ func handle_start() -> void:
 	direction = collision_shape_2d.global_position.direction_to(start_position)
 	velocity = direction * patrol_speed
 	animated_sprite_2d.play("walk_side")
-	if collision_shape_2d.global_position == start_position:
+	if collision_shape_2d.global_position.distance_to(start_position) < 1:
 		current_state = state.IDLE
 
 func check_for_player(body : Node2D) -> void:

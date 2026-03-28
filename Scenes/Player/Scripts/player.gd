@@ -3,13 +3,15 @@ class_name Player extends CharacterBody2D
 # Determines how fast the Player will move
 var speed : float = 350
 var facing = "none"
-var plr_health : int = 10
-var max_plr_health : int = 10
+var health : int = 10
+var max_health : int = 10
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
+@onready var hurtbox: Area2D = $HurtBox
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	hurtbox.send_damage.connect(take_damage)
 	animated_sprite_2d.play("idle_down")
 	pass # Replace with function body.
 
@@ -73,3 +75,6 @@ func play_anim(movement):
 			animated_sprite_2d.play("walk_down")
 		elif movement == 0:
 			animated_sprite_2d.play("idle_down")
+
+func take_damage(damage: int) -> void:
+	health -= damage

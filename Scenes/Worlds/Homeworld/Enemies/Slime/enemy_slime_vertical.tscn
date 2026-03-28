@@ -395,7 +395,7 @@ size = Vector2(46, 2023)
 
 [node name="Slime - Vertical" type="CharacterBody2D" unique_id=1312114128]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_76hb6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=608103925]

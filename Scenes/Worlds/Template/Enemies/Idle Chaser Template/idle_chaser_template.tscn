@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bg5tp7gigabwq" path="res://Scenes/Worlds/Template/Enemies/Idle Chaser Template/Scripts/idle_chaser_template.gd" id="1_hd8xb"]
 [ext_resource type="Texture2D" uid="uid://2f6hqeeh3ati" path="res://Sprites/Worlds/Homeworld/Slime/slime.png" id="2_v7oyk"]
+[ext_resource type="Script" uid="uid://bpamg3oitx4dk" path="res://Scenes/General Use Scripts/hurtbox.gd" id="3_fj507"]
+[ext_resource type="Script" uid="uid://ese4gqc8bwyd" path="res://Scenes/General Use Scripts/hitbox.gd" id="4_2jfmo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ouoo"]
 atlas = ExtResource("2_v7oyk")
@@ -388,22 +390,27 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51wgi"]
-size = Vector2(44, 15)
+size = Vector2(38, 15)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_82mv1"]
 radius = 99.78602
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hd8xb"]
+size = Vector2(38, 15)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fj507"]
+size = Vector2(38, 13)
+
 [node name="IdleChaser" type="CharacterBody2D" unique_id=1312114128]
 collision_layer = 4
-collision_mask = 3
+collision_mask = 11
 script = ExtResource("1_hd8xb")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=608103925]
 position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_ogs6t")
-animation = &"run_down"
-frame_progress = 0.025202757
+animation = &"idle_down"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715383869]
 position = Vector2(0, -7.5)
@@ -414,8 +421,27 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=743717957]
+visible = false
 position = Vector2(0, -5.5)
 shape = SubResource("CircleShape2D_82mv1")
+
+[node name="HurtBox" type="Area2D" parent="." unique_id=1181058607]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("3_fj507")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=1377983919]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_hd8xb")
+debug_color = Color(0, 0.5058824, 0.25490198, 0.41960785)
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1520268805]
+script = ExtResource("4_2jfmo")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1463018733]
+position = Vector2(0, -7.5)
+shape = SubResource("RectangleShape2D_fj507")
+debug_color = Color(0.90102446, 0, 0.16025886, 0.41960785)
 
 [node name="ChaseTimer" type="Timer" parent="." unique_id=2128758940]
 wait_time = 2.0

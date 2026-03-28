@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bn4b1u73kwf3o" path="res://Scenes/Player/Scripts/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://du2nwcojmkt61" path="res://Sprites/Player/player.png" id="2_a3d8c"]
+[ext_resource type="Script" uid="uid://bpamg3oitx4dk" path="res://Scenes/General Use Scripts/hurtbox.gd" id="3_xpcdj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mtuoh"]
 atlas = ExtResource("2_a3d8c")
@@ -367,10 +368,10 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0jl8"]
-size = Vector2(40, 10)
+size = Vector2(31, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
-size = Vector2(40, 10)
+size = Vector2(27, 10)
 
 [node name="Player" type="CharacterBody2D" unique_id=642040466 groups=["player"]]
 collision_layer = 2
@@ -384,12 +385,14 @@ sprite_frames = SubResource("SpriteFrames_gk6dx")
 animation = &"idle_down"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=139677064]
-position = Vector2(0, -5)
+position = Vector2(0.5, -5)
 shape = SubResource("RectangleShape2D_f0jl8")
 
-[node name="Hurtbox" type="Area2D" parent="." unique_id=1932044046]
+[node name="HurtBox" type="Area2D" parent="." unique_id=1932044046]
+collision_mask = 4
+script = ExtResource("3_xpcdj")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox" unique_id=605629464]
-position = Vector2(0, -5)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=605629464]
+position = Vector2(0.5, -5)
 shape = SubResource("RectangleShape2D_a3d8c")
 debug_color = Color(0, 0.5058824, 0.25490198, 0.41960785)
