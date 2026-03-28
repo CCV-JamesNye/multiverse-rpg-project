@@ -1,11 +1,5 @@
 extends CharacterBody2D
-
-@export var patrol_speed: float = 120.0
-var direction : Vector2 = Vector2.DOWN
-var facing = "down"
-enum state {IDLE, PATROL, CHASE}
-var current_state : state = state.IDLE
-var player_target = Player
+class_name IdleChaser
 
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
@@ -13,12 +7,21 @@ var player_target = Player
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
 
+@export var patrol_speed: float = 110.0
+var direction : Vector2 = Vector2.DOWN
+var facing = "down"
+enum state {IDLE, PATROL, CHASE, START}
+var current_state : state = state.IDLE
+var player_target = Player
+@onready var start_position
+
 func _ready() -> void:
 	player_target = get_tree().get_first_node_in_group("player")
+	start_position = collision_shape_2d.global_position
 	player_detector.body_entered.connect(check_for_player)
 	player_detector.body_exited.connect(player_left)
 	chase_timer.timeout.connect(end_chase)
-	idle_timer.timeout.connect(start_patrol)
+	idle_timer.timeout.connect(return_to_start)
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -28,6 +31,8 @@ func _physics_process(delta: float) -> void:
 			handle_patrol()
 		state.CHASE:
 			handle_chase()
+		state.START:
+			handle_start()
 	
 	move_and_collide(velocity * delta)
 
@@ -60,7 +65,7 @@ func handle_patrol() -> void:
 	pass
 
 func handle_chase() -> void:
-	direction = player_target.global_position - collision_shape_2d.global_position
+	direction = collision_shape_2d.global_position.direction_to(player_target.global_position)
 	
 	if facing == "down":
 		animated_sprite_2d.play("run_down")
@@ -74,6 +79,13 @@ func handle_chase() -> void:
 		animated_sprite_2d.flip_h = true
 	velocity = direction * (patrol_speed * 2)
 	pass
+
+func handle_start() -> void:
+	direction = collision_shape_2d.global_position.direction_to(start_position)
+	velocity = direction * patrol_speed
+	animated_sprite_2d.play("walk_side")
+	if collision_shape_2d.global_position == start_position:
+		current_state = state.IDLE
 
 func check_for_player(body : Node2D) -> void:
 	if body is Player:
@@ -89,5 +101,5 @@ func end_chase() -> void:
 	current_state = state.IDLE
 	idle_timer.start()
 
-func start_patrol() -> void:
-	current_state = state.PATROL
+func return_to_start() -> void:
+	current_state = state.START
