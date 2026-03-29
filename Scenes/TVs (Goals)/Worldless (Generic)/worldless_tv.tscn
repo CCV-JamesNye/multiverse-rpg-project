@@ -1,0 +1,85 @@
+[gd_scene format=3 uid="uid://dvuuy0w7sg42x"]
+
+[ext_resource type="Script" uid="uid://dtwvsa0dle05" path="res://Scenes/TVs (Goals)/Worldless (Generic)/Scripts/worldless_tv.gd" id="1_50uxt"]
+[ext_resource type="Texture2D" uid="uid://by73aw0k1ovf7" path="res://Sprites/Worlds/Worldless (Generic)/tv.png" id="1_s3vjd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_50uxt"]
+atlas = ExtResource("1_s3vjd")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_w5ato"]
+atlas = ExtResource("1_s3vjd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6p681"]
+atlas = ExtResource("1_s3vjd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i5gei"]
+atlas = ExtResource("1_s3vjd")
+region = Rect2(128, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_crb2v"]
+atlas = ExtResource("1_s3vjd")
+region = Rect2(96, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmh6w"]
+atlas = ExtResource("1_s3vjd")
+region = Rect2(64, 0, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cnwwf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_50uxt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_w5ato")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6p681")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i5gei")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_crb2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmh6w")
+}],
+"loop": true,
+"name": &"default",
+"speed": 3.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s3vjd"]
+size = Vector2(72, 36)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_50uxt"]
+size = Vector2(72, 36)
+
+[node name="WorldlessTV" type="Node2D" unique_id=733644053]
+script = ExtResource("1_50uxt")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=279393287]
+position = Vector2(1.1368684e-13, -1.9073486e-06)
+scale = Vector2(2.53125, 2.53125)
+sprite_frames = SubResource("SpriteFrames_cnwwf")
+frame_progress = 0.33741346
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=634141610]
+collision_layer = 16
+collision_mask = 15
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=251069988]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_s3vjd")
+
+[node name="PlayerDetector" type="Area2D" parent="." unique_id=452182827]
+collision_layer = 16
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=1827628975]
+position = Vector2(0, 17)
+shape = SubResource("RectangleShape2D_50uxt")

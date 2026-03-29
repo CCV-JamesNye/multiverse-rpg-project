@@ -4,6 +4,7 @@ extends CanvasLayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	SceneTransition.fade_in()
 	return_button.pressed.connect(return_to_menu)
 
 func return_to_menu() -> void:
