@@ -1,0 +1,72 @@
+[gd_scene format=3 uid="uid://hev03nnsgdno"]
+
+[ext_resource type="Script" uid="uid://b7hqt4kkwb6wl" path="res://Scenes/UI/Scripts/game_over.gd" id="1_jxkuk"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnepm"]
+bg_color = Color(0, 0, 0, 0.5019608)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u0kk"]
+bg_color = Color(0.19607843, 0.24313726, 0.69803923, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="Game Over" type="CanvasLayer" unique_id=1242080263]
+process_mode = 3
+script = ExtResource("1_jxkuk")
+
+[node name="Control" type="Control" parent="." unique_id=411148990]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=184204308]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_pnepm")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=2059785654]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="Control/MarginContainer" unique_id=992739475]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_7u0kk")
+
+[node name="Label" type="Label" parent="Control/MarginContainer" unique_id=579420181]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "READ ERROR"
+
+[node name="Label2" type="Label" parent="Control/MarginContainer" unique_id=344022344]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "The disc has encountered an error. Please run it again."
+
+[node name="MenuButton" type="Button" parent="Control" unique_id=796059730]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 572.0
+offset_right = 1110.0
+offset_bottom = 603.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "MENU"

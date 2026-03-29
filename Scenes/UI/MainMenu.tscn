@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://dne06jddya6i8"]
+
+[ext_resource type="Script" uid="uid://dxuupsntb0hme" path="res://Scenes/UI/Scripts/main_menu.gd" id="1_5wsvm"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
+bg_color = Color(0.19607843, 0.24313726, 0.69803923, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="Main Menu" type="Control" unique_id=102985203]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5wsvm")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1104340340]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.14901961, 0.14901961, 0.14901961, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1931123782]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=2131899472]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_erv1k")
+
+[node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Panel" unique_id=1605788640]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/Panel/MarginContainer" unique_id=1754048106]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1412325062]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 10.0
+text = "Multiverse RPG Project
+Temp Name"
+horizontal_alignment = 1
+
+[node name="Start-Play" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=1212574709]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Play"
+
+[node name="Quit-Eject" type="Button" parent="MarginContainer/Panel/MarginContainer/VBoxContainer" unique_id=555757609]
+layout_mode = 2
+size_flags_vertical = 3
+text = "Eject"

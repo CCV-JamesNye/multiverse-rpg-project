@@ -2,8 +2,8 @@
 
 [ext_resource type="Script" uid="uid://bg5tp7gigabwq" path="res://Scenes/Worlds/Template/Enemies/Idle Chaser Template/Scripts/idle_chaser_template.gd" id="1_hd8xb"]
 [ext_resource type="Texture2D" uid="uid://2f6hqeeh3ati" path="res://Sprites/Worlds/Homeworld/Slime/slime.png" id="2_v7oyk"]
-[ext_resource type="Script" uid="uid://bpamg3oitx4dk" path="res://Scenes/General Use Scripts/hurtbox.gd" id="3_fj507"]
-[ext_resource type="Script" uid="uid://ese4gqc8bwyd" path="res://Scenes/General Use Scripts/hitbox.gd" id="4_2jfmo"]
+[ext_resource type="Script" uid="uid://bpamg3oitx4dk" path="res://Scenes/General Use Scenes/General Use Scripts/hurtbox.gd" id="3_fj507"]
+[ext_resource type="Script" uid="uid://ese4gqc8bwyd" path="res://Scenes/General Use Scenes/General Use Scripts/hitbox.gd" id="4_2jfmo"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ouoo"]
 atlas = ExtResource("2_v7oyk")
@@ -436,6 +436,8 @@ shape = SubResource("RectangleShape2D_hd8xb")
 debug_color = Color(0, 0.5058824, 0.25490198, 0.41960785)
 
 [node name="HitBox" type="Area2D" parent="." unique_id=1520268805]
+collision_layer = 4
+monitoring = false
 script = ExtResource("4_2jfmo")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1463018733]

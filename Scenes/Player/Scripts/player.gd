@@ -78,3 +78,6 @@ func play_anim(movement):
 
 func take_damage(damage: int) -> void:
 	health -= damage
+
+func die() -> void:
+	pass
