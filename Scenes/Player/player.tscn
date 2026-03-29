@@ -407,6 +407,21 @@ corner_radius_bottom_right = 6
 corner_radius_bottom_left = 6
 corner_detail = 6
 
+[sub_resource type="GDScript" id="GDScript_xpcdj"]
+resource_name = "player_healthbar"
+script/source = "extends ProgressBar
+
+@onready var player: Player = $\"../..\"
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	player.health_update.connect(update_bar)
+	pass
+
+func update_bar(health: int) -> void:
+	value = health
+"
+
 [node name="Player" type="CharacterBody2D" unique_id=642040466 groups=["player"]]
 collision_layer = 2
 collision_mask = 5
@@ -443,3 +458,4 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_xpcdj")
 max_value = 10.0
 value = 10.0
 show_percentage = false
+script = SubResource("GDScript_xpcdj")

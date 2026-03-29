@@ -4,10 +4,6 @@
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pnepm"]
 bg_color = Color(0, 0, 0, 0.5019608)
-corner_radius_top_left = 32
-corner_radius_top_right = 32
-corner_radius_bottom_right = 32
-corner_radius_bottom_left = 32
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7u0kk"]
 bg_color = Color(0.19607843, 0.24313726, 0.69803923, 1)
@@ -70,3 +66,13 @@ offset_bottom = 603.0
 size_flags_horizontal = 4
 size_flags_vertical = 8
 text = "MENU"
+
+[node name="RestartButton" type="Button" parent="Control" unique_id=1813283776]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 531.0
+offset_right = 1110.0
+offset_bottom = 562.0
+size_flags_horizontal = 4
+size_flags_vertical = 8
+text = "RESTART"

@@ -6,6 +6,7 @@ var facing = "none"
 var health : int = 10
 var max_health : int = 10
 var death_anim : bool = false
+signal health_update (int)
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurtbox: Area2D = $HurtBox
@@ -79,7 +80,7 @@ func play_anim(movement):
 
 func take_damage(damage: int) -> void:
 	health -= damage
-	printerr(health)
+	health_update.emit(health)
 	if health <= 0:
 		die()
 

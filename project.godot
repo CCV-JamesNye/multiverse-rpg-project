@@ -17,8 +17,8 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-SceneTransition="*uid://c8vygruipaq2m"
 PauseMenu="*uid://bmx4li7f6uhvk"
+SceneTransition="*uid://c8vygruipaq2m"
 
 [global_group]
 
