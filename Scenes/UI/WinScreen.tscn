@@ -1,0 +1,66 @@
+[gd_scene format=3 uid="uid://xq5n5prhfjwc"]
+
+[ext_resource type="Script" uid="uid://bdiug22b3dv2d" path="res://Scenes/UI/Scripts/win_screen.gd" id="1_p4kt1"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_sav73"]
+bg_color = Color(0, 0, 0, 0.5019608)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_p4kt1"]
+bg_color = Color(0.19607843, 0.24313726, 0.69803923, 1)
+corner_radius_top_left = 32
+corner_radius_top_right = 32
+corner_radius_bottom_right = 32
+corner_radius_bottom_left = 32
+
+[node name="WinScreen" type="CanvasLayer" unique_id=52969123]
+script = ExtResource("1_p4kt1")
+
+[node name="Control" type="Control" parent="." unique_id=1443226670]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Panel" type="Panel" parent="Control" unique_id=1157918160]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_sav73")
+
+[node name="MarginContainer" type="MarginContainer" parent="Control" unique_id=826559534]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 1112.0
+offset_bottom = 608.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="Panel" type="Panel" parent="Control/MarginContainer" unique_id=1055227009]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_p4kt1")
+
+[node name="Label" type="Label" parent="Control/MarginContainer" unique_id=526586471]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+text = "END OF DISC"
+
+[node name="Label2" type="Label" parent="Control/MarginContainer" unique_id=1386925306]
+layout_mode = 2
+size_flags_horizontal = 4
+text = "If you would like to watch the film again, please return to the menu."
+
+[node name="ReturnButton" type="Button" parent="Control" unique_id=1157421232]
+layout_mode = 0
+offset_left = 40.0
+offset_top = 574.0
+offset_right = 1110.0
+offset_bottom = 605.0
+size_flags_vertical = 8
+text = "Return to Menu"
