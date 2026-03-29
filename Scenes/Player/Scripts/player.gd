@@ -5,6 +5,7 @@ var speed : float = 350
 var facing = "none"
 var health : int = 10
 var max_health : int = 10
+var death_anim : bool = false
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurtbox: Area2D = $HurtBox
@@ -41,7 +42,7 @@ func _process(delta: float) -> void:
 		play_anim(1)
 		direction.y -= 1
 		direction.x = 0
-	if !Input.is_anything_pressed():
+	if !Input.is_anything_pressed() && death_anim == false:
 		play_anim(0)
 		direction.x = 0
 		direction.y = 0
@@ -78,6 +79,11 @@ func play_anim(movement):
 
 func take_damage(damage: int) -> void:
 	health -= damage
+	printerr(health)
+	if health <= 0:
+		die()
 
 func die() -> void:
-	pass
+	await SceneTransition.fade_to_black()
+	if get_tree() != null:
+		get_tree().change_scene_to_file("res://Scenes/UI/GameOver.tscn")

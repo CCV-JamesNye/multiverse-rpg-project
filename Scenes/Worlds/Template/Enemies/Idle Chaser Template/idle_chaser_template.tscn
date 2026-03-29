@@ -399,7 +399,7 @@ radius = 99.78602
 size = Vector2(38, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj507"]
-size = Vector2(38, 13)
+size = Vector2(38, 15)
 
 [node name="IdleChaser" type="CharacterBody2D" unique_id=1312114128]
 collision_layer = 4
