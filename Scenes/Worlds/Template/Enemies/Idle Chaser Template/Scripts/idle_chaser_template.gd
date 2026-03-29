@@ -67,6 +67,7 @@ func handle_patrol() -> void:
 func handle_chase() -> void:
 	direction = collision_shape_2d.global_position.direction_to(player_target.global_position)
 	
+	idle_timer.stop()
 	if facing == "down":
 		animated_sprite_2d.play("run_down")
 	elif facing == "up":
