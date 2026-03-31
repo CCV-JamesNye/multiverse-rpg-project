@@ -7,20 +7,14 @@ var health : int = 10
 var max_health : int = 10
 var death_anim : bool = false
 signal health_update (int)
-var enemies
-var is_input_allowed : bool = true
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var hurtbox: Area2D = $HurtBox
-@onready var collision: CollisionShape2D = $Collision
-@onready var hit_timer: Timer = $HitTimer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	enemies = get_tree().get_first_node_in_group("enemies")
 	hurtbox.send_damage.connect(take_damage)
 	animated_sprite_2d.play("idle_down")
-	hit_timer.timeout.connect(stop_hit_movement)
 	pass # Replace with function body.
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -29,22 +23,22 @@ func _process(delta: float) -> void:
 	var direction : Vector2 = Vector2.ZERO
 	
 	# Reads input
-	if Input.is_action_pressed("move_right") && is_input_allowed == true:
+	if Input.is_action_pressed("move_right"):
 		facing = "right"
 		play_anim(1)
 		direction.x += 1
 		direction.y = 0
-	if Input.is_action_pressed("move_left") && is_input_allowed == true:
+	if Input.is_action_pressed("move_left"):
 		facing = "left"
 		play_anim(1)
 		direction.x -= 1
 		direction.y = 0
-	if Input.is_action_pressed("move_down") && is_input_allowed == true:
+	if Input.is_action_pressed("move_down"):
 		facing = "down"
 		play_anim(1)
 		direction.y += 1
 		direction.x = 0
-	if Input.is_action_pressed("move_up") && is_input_allowed == true:
+	if Input.is_action_pressed("move_up"):
 		facing = "up"
 		play_anim(1)
 		direction.y -= 1
@@ -86,17 +80,9 @@ func play_anim(movement):
 
 func take_damage(damage: int) -> void:
 	health -= damage
-	if GameManager.enemy_direction == "down":
-		velocity.y += 150
-	is_input_allowed = false
-	hit_timer.start()
 	health_update.emit(health)
 	if health <= 0:
 		die()
 
 func die() -> void:
 	GameManager.plr_die()
-
-func stop_hit_movement() -> void:
-	velocity = Vector2.ZERO
-	is_input_allowed = true

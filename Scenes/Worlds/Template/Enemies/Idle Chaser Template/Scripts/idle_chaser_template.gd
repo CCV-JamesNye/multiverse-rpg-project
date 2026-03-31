@@ -6,19 +6,14 @@ class_name IdleChaser
 @onready var player_detector: Area2D = $PlayerDetector
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
-@onready var hit_timer: Timer = $HitTimer
-@onready var wait_to_chase_timer: Timer = $WaitToChaseTimer
 
 @export var patrol_speed: float = 110.0
 var direction : Vector2 = Vector2.DOWN
 var facing = "down"
-enum state {IDLE, PATROL, CHASE, START, HIT_PLAYER}
+enum state {IDLE, PATROL, CHASE, START}
 var current_state : state = state.IDLE
 var player_target = Player
 @onready var start_position
-var current_position
-@onready var hitbox: HitBox = $HitBox
-var can_chase : bool = true
 
 func _ready() -> void:
 	player_target = get_tree().get_first_node_in_group("player")
@@ -27,13 +22,6 @@ func _ready() -> void:
 	player_detector.body_exited.connect(player_left)
 	chase_timer.timeout.connect(end_chase)
 	idle_timer.timeout.connect(return_to_start)
-	hitbox.area_entered.connect(change_state_to_hit)
-	hit_timer.timeout.connect(stop_hit_movement)
-	wait_to_chase_timer.timeout.connect(start_chase)
-
-func _process(_delta: float) -> void:
-	GameManager.enemy_direction = facing
-	printerr(current_state)
 
 func _physics_process(delta: float) -> void:
 	match current_state:
@@ -45,8 +33,6 @@ func _physics_process(delta: float) -> void:
 			handle_chase()
 		state.START:
 			handle_start()
-		state.HIT_PLAYER:
-			handle_hitplayer()
 	
 	move_and_collide(velocity * delta)
 
@@ -82,7 +68,6 @@ func handle_chase() -> void:
 	direction = collision_shape_2d.global_position.direction_to(player_target.global_position)
 	
 	idle_timer.stop()
-	wait_to_chase_timer.stop()
 	if facing == "down":
 		animated_sprite_2d.play("run_down")
 	elif facing == "up":
@@ -106,17 +91,7 @@ func handle_start() -> void:
 func check_for_player(body : Node2D) -> void:
 	if body is Player:
 		chase_timer.stop()
-		wait_to_chase_timer.start()
-
-func start_chase() -> void:
-	current_state = state.CHASE
-
-func handle_hitplayer() -> void:
-	can_chase = false
-	animated_sprite_2d.play("idle_down")
-	hit_timer.start()
-	if facing == "down":
-		velocity.y -= 150
+		current_state = state.CHASE
 
 func player_left(body : Node2D) -> void:
 	if body is Player:
@@ -129,10 +104,3 @@ func end_chase() -> void:
 
 func return_to_start() -> void:
 	current_state = state.START
-
-func stop_hit_movement() -> void:
-	can_chase = true
-	handle_chase()
-
-func change_state_to_hit() -> void:
-	current_state = state.HIT_PLAYER

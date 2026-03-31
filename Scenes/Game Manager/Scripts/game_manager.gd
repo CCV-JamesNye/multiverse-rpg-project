@@ -1,7 +1,5 @@
 extends Node
 
-var enemy_direction
-
 func plr_die():
 	await SceneTransition.fade_to_black()
 	if get_tree() != null:
