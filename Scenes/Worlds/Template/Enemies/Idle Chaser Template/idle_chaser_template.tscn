@@ -5,6 +5,26 @@
 [ext_resource type="Script" uid="uid://bpamg3oitx4dk" path="res://Scenes/General Use Scenes/General Use Scripts/hurtbox.gd" id="3_fj507"]
 [ext_resource type="Script" uid="uid://ese4gqc8bwyd" path="res://Scenes/General Use Scenes/General Use Scripts/hitbox.gd" id="4_2jfmo"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_2jfmo"]
+atlas = ExtResource("2_v7oyk")
+region = Rect2(0, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7524t"]
+atlas = ExtResource("2_v7oyk")
+region = Rect2(32, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0uqf3"]
+atlas = ExtResource("2_v7oyk")
+region = Rect2(64, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ekv1g"]
+atlas = ExtResource("2_v7oyk")
+region = Rect2(96, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hu4fg"]
+atlas = ExtResource("2_v7oyk")
+region = Rect2(128, 384, 32, 32)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ouoo"]
 atlas = ExtResource("2_v7oyk")
 region = Rect2(0, 0, 32, 32)
@@ -199,6 +219,26 @@ region = Rect2(160, 160, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_ogs6t"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2jfmo")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7524t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0uqf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ekv1g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hu4fg")
+}],
+"loop": false,
+"name": &"die",
+"speed": 7.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_0ouoo")
@@ -410,7 +450,9 @@ script = ExtResource("1_hd8xb")
 position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_ogs6t")
-animation = &"idle_down"
+animation = &"die"
+frame = 4
+frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715383869]
 position = Vector2(0, -7.5)
@@ -452,3 +494,6 @@ one_shot = true
 [node name="IdleTimer" type="Timer" parent="." unique_id=486494404]
 wait_time = 1.5
 one_shot = true
+
+[node name="DieTimer" type="Timer" parent="." unique_id=603322212]
+wait_time = 0.728

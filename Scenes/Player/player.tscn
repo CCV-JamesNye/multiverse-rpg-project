@@ -285,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_j6uq4")
 }],
-"loop": true,
+"loop": false,
 "name": &"sword_down",
 "speed": 8.0
 }, {
@@ -302,7 +302,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_m6ahd")
 }],
-"loop": true,
+"loop": false,
 "name": &"sword_side",
 "speed": 8.0
 }, {
@@ -319,7 +319,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_8d028")
 }],
-"loop": true,
+"loop": false,
 "name": &"sword_up",
 "speed": 8.0
 }, {
@@ -432,6 +432,7 @@ position = Vector2(-1, -48)
 scale = Vector2(2.7083333, 2.7083333)
 sprite_frames = SubResource("SpriteFrames_gk6dx")
 animation = &"idle_down"
+frame_progress = 0.46965018
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=139677064]
 position = Vector2(0.5, -5)
@@ -459,3 +460,6 @@ max_value = 10.0
 value = 10.0
 show_percentage = false
 script = SubResource("GDScript_xpcdj")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=987881198]
+wait_time = 0.35
