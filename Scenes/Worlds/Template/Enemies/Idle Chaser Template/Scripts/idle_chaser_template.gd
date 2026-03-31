@@ -1,12 +1,12 @@
 extends CharacterBody2D
 class_name IdleChaser
 
+@onready var idle_chaser: IdleChaser = $"."
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_detector: Area2D = $PlayerDetector
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
-@onready var die_timer: Timer = $DieTimer
 @onready var hurtbox: HurtBox = $HurtBox
 
 @export var patrol_speed: float = 110.0
@@ -19,6 +19,8 @@ var player_target = Player
 var health : int = 2
 var can_chase : bool = true
 signal health_update (int)
+@export var idle_chaser_instance = idle_chaser
+var is_dying : bool = false
 
 func _ready() -> void:
 	player_target = get_tree().get_first_node_in_group("player")
@@ -99,11 +101,11 @@ func handle_start() -> void:
 
 func handle_die() -> void:
 	can_chase = false
+	is_dying = true
 	chase_timer.stop()
 	idle_timer.stop()
 	velocity = Vector2.ZERO
 	animated_sprite_2d.play("die")
-	die_timer.start()
 
 func take_damage(damage: int) -> void:
 	health -= damage
@@ -127,3 +129,7 @@ func end_chase() -> void:
 
 func return_to_start() -> void:
 	current_state = state.START
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if is_dying == true:
+		idle_chaser.queue_free()
