@@ -24,6 +24,7 @@ SceneTransition="*uid://c8vygruipaq2m"
 [global_group]
 
 player=""
+enemies=""
 
 [input]
 

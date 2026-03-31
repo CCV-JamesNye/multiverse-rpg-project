@@ -88,4 +88,4 @@ position = Vector2(935, 359)
 position = Vector2(61, 129)
 
 [node name="Idle Chaser Template" parent="." unique_id=1242787098 instance=ExtResource("4_bgdui")]
-position = Vector2(257, 325)
+position = Vector2(250, 306)

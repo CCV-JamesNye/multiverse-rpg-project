@@ -401,7 +401,7 @@ size = Vector2(38, 15)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fj507"]
 size = Vector2(38, 15)
 
-[node name="IdleChaser" type="CharacterBody2D" unique_id=1312114128]
+[node name="IdleChaser" type="CharacterBody2D" unique_id=1312114128 groups=["enemies"]]
 collision_layer = 4
 collision_mask = 11
 script = ExtResource("1_hd8xb")
@@ -421,7 +421,6 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=743717957]
-visible = false
 position = Vector2(0, -5.5)
 shape = SubResource("CircleShape2D_82mv1")
 
@@ -452,3 +451,8 @@ one_shot = true
 [node name="IdleTimer" type="Timer" parent="." unique_id=486494404]
 wait_time = 1.5
 one_shot = true
+
+[node name="HitTimer" type="Timer" parent="." unique_id=1519238075]
+wait_time = 0.321
+
+[node name="WaitToChaseTimer" type="Timer" parent="." unique_id=32136322]

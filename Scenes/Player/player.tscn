@@ -459,3 +459,6 @@ max_value = 10.0
 value = 10.0
 show_percentage = false
 script = SubResource("GDScript_xpcdj")
+
+[node name="HitTimer" type="Timer" parent="." unique_id=1066145397]
+wait_time = 0.321
