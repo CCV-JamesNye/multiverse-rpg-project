@@ -86,6 +86,7 @@ func play_anim(movement):
 func take_damage(damage: int) -> void:
 	health -= damage
 	health_update.emit(health)
+	animation_player.play("hit")
 	hit.play()
 	if health <= 0:
 		die()

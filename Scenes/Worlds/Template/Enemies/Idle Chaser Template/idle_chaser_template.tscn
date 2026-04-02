@@ -2,6 +2,7 @@
 
 [ext_resource type="Script" uid="uid://bg5tp7gigabwq" path="res://Scenes/Worlds/Template/Enemies/Idle Chaser Template/Scripts/idle_chaser_template.gd" id="1_hd8xb"]
 [ext_resource type="Texture2D" uid="uid://2f6hqeeh3ati" path="res://Sprites/Worlds/Homeworld/Slime/slime.png" id="2_v7oyk"]
+[ext_resource type="AudioStream" uid="uid://dtrhxaikhipyx" path="res://Audio/Sounds/hurt.wav" id="3_7524t"]
 [ext_resource type="Script" uid="uid://bpamg3oitx4dk" path="res://Scenes/General Use Scenes/General Use Scripts/hurtbox.gd" id="3_fj507"]
 [ext_resource type="Script" uid="uid://ese4gqc8bwyd" path="res://Scenes/General Use Scenes/General Use Scripts/hitbox.gd" id="4_2jfmo"]
 
@@ -24,6 +25,14 @@ region = Rect2(96, 384, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_hu4fg"]
 atlas = ExtResource("2_v7oyk")
 region = Rect2(128, 384, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_51jk3"]
+atlas = ExtResource("2_v7oyk")
+region = Rect2(0, 320, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pwve0"]
+atlas = ExtResource("2_v7oyk")
+region = Rect2(64, 320, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0ouoo"]
 atlas = ExtResource("2_v7oyk")
@@ -241,6 +250,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_51jk3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pwve0")
+}],
+"loop": false,
+"name": &"hit",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_0ouoo")
 }, {
 "duration": 1.0,
@@ -429,6 +449,43 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="Animation" id="Animation_2jfmo"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_7524t"]
+resource_name = "hit"
+length = 0.10000334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.033333335, 0.06666667, 0.1),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(0.7607843, 0.1764706, 0, 1), Color(0.7607843, 0.1764706, 0, 1), Color(0.7607843, 0.17647058, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_0uqf3"]
+_data = {
+&"RESET": SubResource("Animation_2jfmo"),
+&"hit": SubResource("Animation_7524t")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_51wgi"]
 size = Vector2(38, 15)
 
@@ -450,9 +507,15 @@ script = ExtResource("1_hd8xb")
 position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_ogs6t")
-animation = &"die"
-frame = 4
-frame_progress = 1.0
+animation = &"idle_down"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1101257423]
+libraries/ = SubResource("AnimationLibrary_0uqf3")
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="." unique_id=330921513]
+stream = ExtResource("3_7524t")
+volume_db = 7.0
+bus = &"General SFX"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715383869]
 position = Vector2(0, -7.5)

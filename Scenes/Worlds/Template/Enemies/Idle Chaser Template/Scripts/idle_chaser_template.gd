@@ -8,6 +8,7 @@ class_name IdleChaser
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
 @onready var hurtbox: HurtBox = $HurtBox
+@onready var animation_player: AnimationPlayer = $AnimationPlayer
 
 @export var patrol_speed: float = 110.0
 var direction : Vector2 = Vector2.DOWN
@@ -116,6 +117,7 @@ func handle_die() -> void:
 func take_damage(damage: int) -> void:
 	health -= damage
 	health_update.emit(health)
+	animation_player.play("hit")
 	if health <= 0:
 		current_state = state.DIE
 
