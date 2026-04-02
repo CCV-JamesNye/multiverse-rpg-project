@@ -3,6 +3,7 @@ class_name Player extends CharacterBody2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var hurtbox: Area2D = $HurtBox
+@onready var hit: AudioStreamPlayer2D = $Hit
 
 # Determines how fast the Player will move
 var speed : float = 350
@@ -85,6 +86,7 @@ func play_anim(movement):
 func take_damage(damage: int) -> void:
 	health -= damage
 	health_update.emit(health)
+	hit.play()
 	if health <= 0:
 		die()
 

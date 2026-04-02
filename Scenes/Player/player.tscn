@@ -2,7 +2,9 @@
 
 [ext_resource type="Script" uid="uid://bn4b1u73kwf3o" path="res://Scenes/Player/Scripts/player.gd" id="1_a3d8c"]
 [ext_resource type="Texture2D" uid="uid://du2nwcojmkt61" path="res://Sprites/Player/player.png" id="2_a3d8c"]
+[ext_resource type="AudioStream" uid="uid://cqquyqlvi2juc" path="res://Audio/Sounds/freesound_community-sword-sound-2-36274.wav" id="3_htcer"]
 [ext_resource type="Script" uid="uid://bpamg3oitx4dk" path="res://Scenes/General Use Scenes/General Use Scripts/hurtbox.gd" id="3_xpcdj"]
+[ext_resource type="AudioStream" uid="uid://dtrhxaikhipyx" path="res://Audio/Sounds/hurt.wav" id="4_dd0ac"]
 [ext_resource type="Script" uid="uid://ese4gqc8bwyd" path="res://Scenes/General Use Scenes/General Use Scripts/hitbox.gd" id="4_mtuoh"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0liok"]
@@ -628,6 +630,21 @@ tracks/5/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SwingSword")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.032421064,
+"stream": ExtResource("3_htcer")
+}],
+"times": PackedFloat32Array(0.032421064)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="Animation" id="Animation_jlvik"]
 resource_name = "sword_left"
@@ -716,6 +733,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SwingSword")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.05110097,
+"stream": ExtResource("3_htcer")
+}],
+"times": PackedFloat32Array(0.05110097)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_htcer"]
 resource_name = "sword_right"
@@ -804,6 +836,21 @@ tracks/6/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/7/type = "audio"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SwingSword")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.029814564,
+"stream": ExtResource("3_htcer")
+}],
+"times": PackedFloat32Array(0.029814564)
+}
+tracks/7/use_blend = true
 
 [sub_resource type="Animation" id="Animation_dd0ac"]
 resource_name = "sword_up"
@@ -880,6 +927,21 @@ tracks/5/keys = {
 "update": 1,
 "values": [false, true, false]
 }
+tracks/6/type = "audio"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SwingSword")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"clips": [{
+"end_offset": 0.0,
+"start_offset": 0.038068477,
+"stream": ExtResource("3_htcer")
+}],
+"times": PackedFloat32Array(0.038068477)
+}
+tracks/6/use_blend = true
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_dd0ac"]
 _data = {
@@ -936,6 +998,12 @@ flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1765066182]
 libraries/ = SubResource("AnimationLibrary_dd0ac")
+
+[node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1071420950]
+volume_db = 16.627
+
+[node name="Hit" type="AudioStreamPlayer2D" parent="." unique_id=206141728]
+stream = ExtResource("4_dd0ac")
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=139677064]
 visible = false
