@@ -1001,10 +1001,12 @@ libraries/ = SubResource("AnimationLibrary_dd0ac")
 
 [node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1071420950]
 volume_db = 13.0
+bus = &"General SFX"
 
 [node name="Hit" type="AudioStreamPlayer2D" parent="." unique_id=206141728]
 stream = ExtResource("4_dd0ac")
 volume_db = 7.0
+bus = &"General SFX"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=139677064]
 visible = false
