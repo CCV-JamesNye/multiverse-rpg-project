@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://dne06jddya6i8"]
 
 [ext_resource type="Script" uid="uid://dxuupsntb0hme" path="res://Scenes/UI/Scripts/main_menu.gd" id="1_5wsvm"]
+[ext_resource type="AudioStream" uid="uid://b5sa47xyqysx" path="res://Audio/Sounds/tv-button-select.wav" id="2_mjmdf"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_erv1k"]
 bg_color = Color(0.19607843, 0.24313726, 0.69803923, 1)
@@ -75,3 +76,6 @@ text = "Play"
 layout_mode = 2
 size_flags_vertical = 3
 text = "Eject"
+
+[node name="Select" type="AudioStreamPlayer2D" parent="." unique_id=844306143]
+stream = ExtResource("2_mjmdf")
