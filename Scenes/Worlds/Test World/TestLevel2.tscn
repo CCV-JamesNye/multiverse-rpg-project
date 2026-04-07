@@ -1,0 +1,83 @@
+[gd_scene format=4 uid="uid://i3254dx1wnb2"]
+
+[ext_resource type="AudioStream" uid="uid://bp744jki0snjp" path="res://Audio/Music/Paradise_Found.mp3" id="1_ex0eg"]
+[ext_resource type="Texture2D" uid="uid://d3vrrpucovlfg" path="res://Tilesets/Worlds/Homeworld/plains.png" id="1_vg47u"]
+[ext_resource type="PackedScene" uid="uid://b4d57yk8wcn4i" path="res://Scenes/General Use Scenes/SceneChangeArea.tscn" id="2_e7p4b"]
+[ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="2_r5lu4"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r5lu4"]
+texture = ExtResource("1_vg47u")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+2:5/0 = 0
+3:5/0 = 0
+4:5/0 = 0
+5:5/0 = 0
+0:6/0 = 0
+1:6/0 = 0
+2:6/0 = 0
+3:6/0 = 0
+4:6/0 = 0
+5:6/0 = 0
+0:7/0 = 0
+1:7/0 = 0
+2:7/0 = 0
+3:7/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_e7p4b"]
+sources/0 = SubResource("TileSetAtlasSource_r5lu4")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ex0eg"]
+size = Vector2(96, 20)
+
+[node name="TestLevel2" type="Node2D" unique_id=1839628372]
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=455558807]
+stream = ExtResource("1_ex0eg")
+volume_db = 5.0
+
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2144028841]
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAATAAAAAAABAAEAAAATAAEAAAABAAEAAAAVAAAAAAADAAEAAAAVAAEAAAADAAEAAAAUAAEAAAACAAEAAAAUAAAAAAACAAEAAAATAAIAAAABAAIAAAAVAAIAAAADAAIAAAAUAAIAAAACAAIAAAA=")
+tile_set = SubResource("TileSet_e7p4b")
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=730673067]
+
+[node name="SceneChangeArea" parent="." unique_id=1727681937 instance=ExtResource("2_e7p4b")]
+connected_room = "res://Scenes/Worlds/Test World/test_level_1.tscn"
+player_positon = Vector2(1328, 1248)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChangeArea" unique_id=478089457]
+position = Vector2(656, 10)
+shape = SubResource("RectangleShape2D_ex0eg")
+
+[node name="Player" parent="." unique_id=642040466 instance=ExtResource("2_r5lu4")]
+position = Vector2(312, 242)

@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://b4d57yk8wcn4i"]
+
+[ext_resource type="Script" uid="uid://ikknsammaku5" path="res://Scenes/General Use Scenes/General Use Scripts/scene_change_area.gd" id="1_hjo76"]
+
+[node name="SceneChangeArea" type="Area2D" unique_id=1727681937]
+collision_layer = 0
+collision_mask = 2
+script = ExtResource("1_hjo76")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

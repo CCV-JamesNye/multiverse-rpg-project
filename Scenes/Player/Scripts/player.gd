@@ -19,6 +19,10 @@ var is_dying : bool = false
 func _ready() -> void:
 	hurtbox.send_damage.connect(take_damage)
 	animated_sprite_2d.play("idle_down")
+	
+	if RoomChangeHandler.activate == true:
+		global_position = RoomChangeHandler.player_position
+		RoomChangeHandler.activate = false
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -120,6 +124,6 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_dying == true:
 		GameManager.plr_die()
 
-func _on_animation_player_animation_finished(anim_name: StringName) -> void:
+func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 	if is_attacking == true:
 		is_attacking = false
