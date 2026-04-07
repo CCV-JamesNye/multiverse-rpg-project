@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gtff8mwys48m"
-path="res://.godot/imported/decor_16x16.png-0fe206929e06afc59cd2a274a1761690.ctex"
+uid="uid://buv1bbfkyq6ul"
+path="res://.godot/imported/wooden_door_b.png-76712bb8920e67e9f724d7c9e852ad1e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/Worlds/Homeworld/decor_16x16.png"
-dest_files=["res://.godot/imported/decor_16x16.png-0fe206929e06afc59cd2a274a1761690.ctex"]
+source_file="res://Tilesets/Worlds/Homeworld/Walls/wooden_door_b.png"
+dest_files=["res://.godot/imported/wooden_door_b.png-76712bb8920e67e9f724d7c9e852ad1e.ctex"]
 
 [params]
 

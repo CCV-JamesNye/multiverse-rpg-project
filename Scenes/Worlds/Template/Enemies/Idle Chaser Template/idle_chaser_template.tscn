@@ -508,6 +508,7 @@ position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_ogs6t")
 animation = &"idle_down"
+frame_progress = 0.082980044
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1101257423]
 libraries/ = SubResource("AnimationLibrary_0uqf3")

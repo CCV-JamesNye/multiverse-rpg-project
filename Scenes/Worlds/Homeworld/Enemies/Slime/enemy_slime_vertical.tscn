@@ -406,7 +406,8 @@ script = ExtResource("1_76hb6")
 position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_ogs6t")
-animation = &"idle_down"
+animation = &"walk_down"
+frame_progress = 0.27842122
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=715383869]
 position = Vector2(0, -7.5)

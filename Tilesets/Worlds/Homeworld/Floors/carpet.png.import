@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://gtff8mwys48m"
-path="res://.godot/imported/decor_16x16.png-0fe206929e06afc59cd2a274a1761690.ctex"
+uid="uid://ci3yn8o3p0ynd"
+path="res://.godot/imported/carpet.png-0ff30876f029a87b9fc2ffbeff0eaff7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Tilesets/Worlds/Homeworld/decor_16x16.png"
-dest_files=["res://.godot/imported/decor_16x16.png-0fe206929e06afc59cd2a274a1761690.ctex"]
+source_file="res://Tilesets/Worlds/Homeworld/Floors/carpet.png"
+dest_files=["res://.godot/imported/carpet.png-0ff30876f029a87b9fc2ffbeff0eaff7.ctex"]
 
 [params]
 
