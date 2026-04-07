@@ -1023,9 +1023,13 @@ position = Vector2(-1, -48)
 scale = Vector2(2.7083333, 2.7083333)
 sprite_frames = SubResource("SpriteFrames_gk6dx")
 animation = &"sword_side"
+frame = 3
 flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1765066182]
+libraries/ = SubResource("AnimationLibrary_dd0ac")
+
+[node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=261008235]
 libraries/ = SubResource("AnimationLibrary_dd0ac")
 
 [node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1071420950]
@@ -1112,3 +1116,4 @@ debug_color = Color(0.90102446, 0, 0.16025886, 0.41960785)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_animation_player_animation_finished"]

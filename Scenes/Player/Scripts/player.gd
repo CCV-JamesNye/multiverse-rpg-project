@@ -2,6 +2,7 @@ class_name Player extends CharacterBody2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 @onready var hurtbox: Area2D = $HurtBox
 @onready var hit: AudioStreamPlayer2D = $Hit
 
@@ -86,7 +87,7 @@ func play_anim(movement):
 func take_damage(damage: int) -> void:
 	health -= damage
 	health_update.emit(health)
-	animation_player.play("hit")
+	animation_player_2.play("hit")
 	hit.play()
 	if health <= 0:
 		die()
