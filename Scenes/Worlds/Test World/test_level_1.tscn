@@ -1,18 +1,18 @@
 [gd_scene format=4 uid="uid://b63vtoa1y1nd8"]
 
-[ext_resource type="Texture2D" uid="uid://d3vrrpucovlfg" path="res://Tilesets/Worlds/Homeworld/plains.png" id="1_edb35"]
-[ext_resource type="Script" uid="uid://dxsbwg0051mc1" path="res://Scenes/Worlds/Test World/Scripts/test_level.gd" id="1_hjf0y"]
-[ext_resource type="AudioStream" uid="uid://bp744jki0snjp" path="res://Audio/Music/Paradise_Found.mp3" id="2_5aynj"]
-[ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="2_e81l0"]
-[ext_resource type="PackedScene" uid="uid://bb5alq2bl105f" path="res://Scenes/Worlds/Homeworld/Enemies/Slime/enemy_slime_vertical.tscn" id="2_r72nj"]
-[ext_resource type="PackedScene" uid="uid://dcdc7vbba1h20" path="res://Scenes/Worlds/Template/Enemies/Idle Chaser Template/idle_chaser_template.tscn" id="4_bgdui"]
-[ext_resource type="Texture2D" uid="uid://5agetd8gwkkj" path="res://Tilesets/Worlds/Homeworld/grass.png" id="4_hsse5"]
-[ext_resource type="Texture2D" uid="uid://gtff8mwys48m" path="res://Tilesets/Worlds/Homeworld/decor_16x16.png" id="4_mr2pf"]
-[ext_resource type="Texture2D" uid="uid://3gviovn5yasc" path="res://Tilesets/Worlds/Homeworld/decor_8x8.png" id="5_hsse5"]
-[ext_resource type="PackedScene" uid="uid://dvuuy0w7sg42x" path="res://Scenes/TVs (Goals)/Worldless (Generic)/worldless_tv.tscn" id="6_8l6l0"]
+[ext_resource type="Script" uid="uid://dxsbwg0051mc1" path="res://Scenes/Worlds/Test World/Scripts/test_level_1.gd" id="1_3vwn7"]
+[ext_resource type="AudioStream" uid="uid://bp744jki0snjp" path="res://Audio/Music/Paradise_Found.mp3" id="2_ac0gi"]
+[ext_resource type="Texture2D" uid="uid://d3vrrpucovlfg" path="res://Tilesets/Worlds/Homeworld/plains.png" id="3_t1mwh"]
+[ext_resource type="Texture2D" uid="uid://5agetd8gwkkj" path="res://Tilesets/Worlds/Homeworld/grass.png" id="4_bt1b2"]
+[ext_resource type="Texture2D" uid="uid://gtff8mwys48m" path="res://Tilesets/Worlds/Homeworld/decor_16x16.png" id="5_sbd21"]
+[ext_resource type="Texture2D" uid="uid://3gviovn5yasc" path="res://Tilesets/Worlds/Homeworld/decor_8x8.png" id="6_jjumr"]
+[ext_resource type="PackedScene" uid="uid://dvuuy0w7sg42x" path="res://Scenes/TVs (Goals)/Worldless (Generic)/worldless_tv.tscn" id="7_n8i6w"]
+[ext_resource type="PackedScene" uid="uid://bb5alq2bl105f" path="res://Scenes/Worlds/Homeworld/Enemies/Slime/enemy_slime_vertical.tscn" id="8_ug24e"]
+[ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="9_w88tr"]
+[ext_resource type="PackedScene" uid="uid://dcdc7vbba1h20" path="res://Scenes/Worlds/Template/Enemies/Idle Chaser Template/idle_chaser_template.tscn" id="10_c7ymm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_y6sxc"]
-texture = ExtResource("1_edb35")
+texture = ExtResource("3_t1mwh")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -71,7 +71,7 @@ texture = ExtResource("1_edb35")
 4:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_ikowm"]
-texture = ExtResource("4_hsse5")
+texture = ExtResource("4_bt1b2")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ithxq"]
@@ -81,7 +81,7 @@ sources/0 = SubResource("TileSetAtlasSource_y6sxc")
 sources/1 = SubResource("TileSetAtlasSource_ikowm")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wouri"]
-texture = ExtResource("4_mr2pf")
+texture = ExtResource("5_sbd21")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -104,7 +104,7 @@ texture = ExtResource("4_mr2pf")
 3:4/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tahyu"]
-texture = ExtResource("5_hsse5")
+texture = ExtResource("6_jjumr")
 texture_region_size = Vector2i(8, 8)
 0:0/0 = 0
 1:0/0 = 0
@@ -127,12 +127,12 @@ texture_region_size = Vector2i(8, 8)
 sources/0 = SubResource("TileSetAtlasSource_wouri")
 sources/1 = SubResource("TileSetAtlasSource_tahyu")
 
-[node name="TestLevel" type="Node2D" unique_id=805869098]
+[node name="TestLevel1" type="Node2D" unique_id=805869098]
 y_sort_enabled = true
-script = ExtResource("1_hjf0y")
+script = ExtResource("1_3vwn7")
 
 [node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1935967409]
-stream = ExtResource("2_5aynj")
+stream = ExtResource("2_ac0gi")
 volume_db = 5.0
 autoplay = true
 
@@ -146,16 +146,16 @@ scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAALAAgAAAAAAAAAAAAlABcAAAAAAAAAAAASABgAAAAAAAAAAAAzAAsAAAAAAAAAAAAiAAoAAAAAAAAAAAAUAA8AAAAAAAAAAAA5ABwAAAAAAAAAAAArABgAAAACAAAAAAAeABoAAAACAAAAAAAZAB0AAAACAAAAAAAzABEAAAACAAAAAAAeABIAAAACAAAAAAAZABYAAAACAAAAAAAqABIAAAACAAAAAAAsAA0AAAACAAAAAAAJAB4AAAADAAAAAAAQACEAAAADAAAAAAAKABgAAAADAAAAAAAHABkAAAADAAAAAAAEAB4AAAADAAAAAAANAB4AAAADAAAAAAAhAA8AAAAAAAQAAAAGAA4AAAAAAAQAAAAsAAcAAAAAAAQAAAAlAAIAAAAAAAQAAAAZAAQAAAAAAAQAAAAnAAoAAAABAAQAAAAoAAgAAAABAAQAAAAmABAAAAABAAQAAAAMABEAAAABAAQAAAADABMAAAABAAQAAAAxABkAAAACAAQAAAAwABEAAAACAAQAAAAvAAgAAAACAAQAAAA0AAMAAAACAAQAAAA4AAQAAAACAAQAAAA9AA4AAAADAAQAAAA3AA0AAAADAAQAAAA4ABQAAAADAAQAAAA+ABUAAAADAAQAAAA2ABkAAAADAAQAAABCABgAAAABAAAAAABEAA0AAAABAAAAAABBAAcAAAABAAAAAABFAAwAAAABAAAAAAA0ACYAAAACAAAAAAApACEAAAACAAAAAAAqABwAAAACAAAAAAA0AB0AAAACAAAAAAAkACQAAAADAAAAAAAEAAMAAAACAAQAAAA=")
 tile_set = SubResource("TileSet_ikowm")
 
-[node name="WorldlessTV" parent="." unique_id=733644053 instance=ExtResource("6_8l6l0")]
+[node name="WorldlessTV" parent="." unique_id=733644053 instance=ExtResource("7_n8i6w")]
 position = Vector2(2202, 81)
 
-[node name="Slime" parent="." unique_id=1312114128 instance=ExtResource("2_r72nj")]
+[node name="Slime" parent="." unique_id=1312114128 instance=ExtResource("8_ug24e")]
 position = Vector2(550, 302)
 
-[node name="Slime - Vertical" parent="." unique_id=1439659261 instance=ExtResource("2_r72nj")]
+[node name="Slime - Vertical" parent="." unique_id=1439659261 instance=ExtResource("8_ug24e")]
 position = Vector2(935, 359)
 
-[node name="Player" parent="." unique_id=826490540 instance=ExtResource("2_e81l0")]
+[node name="Player" parent="." unique_id=826490540 instance=ExtResource("9_w88tr")]
 position = Vector2(61, 129)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1918133428]
@@ -166,5 +166,5 @@ limit_bottom = 1280
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
-[node name="Idle Chaser Template" parent="." unique_id=1242787098 instance=ExtResource("4_bgdui")]
+[node name="Idle Chaser Template" parent="." unique_id=1242787098 instance=ExtResource("10_c7ymm")]
 position = Vector2(257, 325)
