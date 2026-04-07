@@ -158,6 +158,10 @@ position = Vector2(935, 359)
 position = Vector2(61, 129)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=1918133428]
+limit_left = 0
+limit_top = 0
+limit_right = 2304
+limit_bottom = 1280
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
