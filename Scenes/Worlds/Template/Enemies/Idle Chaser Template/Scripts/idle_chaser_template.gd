@@ -23,6 +23,7 @@ var can_chase : bool = true
 signal health_update (int)
 @export var idle_chaser_instance = idle_chaser
 var is_dying : bool = false
+var knockbackVelocity : Vector2 = Vector2.ZERO
 
 func _ready() -> void:
 	player_target = get_tree().get_first_node_in_group("player")
@@ -46,6 +47,9 @@ func _physics_process(delta: float) -> void:
 			handle_start()
 		state.DIE:
 			handle_die()
+	
+	if knockbackVelocity != Vector2.ZERO:
+		velocity = knockbackVelocity
 	
 	move_and_collide(velocity * delta)
 
@@ -119,6 +123,7 @@ func take_damage(damage: int) -> void:
 	health -= damage
 	health_update.emit(health)
 	animation_player.play("hit")
+	handle_knockback()
 	if health <= 0:
 		current_state = state.DIE
 
@@ -145,6 +150,12 @@ func knockback():
 	velocity = Vector2.RIGHT
 	await get_tree().create_timer(0.1).timeout
 	can_chase = true
+
+func handle_knockback() -> void:
+	knockbackVelocity = -350 * direction
+	await get_tree().create_timer(0.2).timeout
+	knockbackVelocity = Vector2.ZERO
+	pass
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_dying == true:
