@@ -22,6 +22,10 @@ var can_chase : bool = true
 signal health_update (int)
 @export var idle_chaser_instance = idle_chaser
 var is_dying : bool = false
+var knockbackVelocity : Vector2
+var player = Player
+var knockbackDirection = global_position.direction_to(player.global_position)
+var knockbackForce : int = 30
 
 func _ready() -> void:
 	player_target = get_tree().get_first_node_in_group("player")
@@ -141,3 +145,8 @@ func return_to_start() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_dying == true:
 		idle_chaser.queue_free()
+
+func get_knockback(knockbackDirection, knockbackForce):
+	knockbackVelocity = knockbackDirection * knockbackForce
+	await get_tree().create_timer(0.1).timeout
+	knockbackVelocity = Vector2.ZERO
