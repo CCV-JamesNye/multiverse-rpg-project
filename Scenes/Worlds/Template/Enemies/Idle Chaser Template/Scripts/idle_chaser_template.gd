@@ -7,6 +7,7 @@ class_name IdleChaser
 @onready var player_detector: Area2D = $PlayerDetector
 @onready var chase_timer: Timer = $ChaseTimer
 @onready var idle_timer: Timer = $IdleTimer
+@onready var hitbox: HitBox = $HitBox
 @onready var hurtbox: HurtBox = $HurtBox
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 
@@ -17,22 +18,18 @@ enum state {IDLE, PATROL, CHASE, START, DIE}
 var current_state : state = state.IDLE
 var player_target = Player
 @onready var start_position
-var health : int = 2
+var health : int = 8
 var can_chase : bool = true
 signal health_update (int)
 @export var idle_chaser_instance = idle_chaser
 var is_dying : bool = false
-var knockbackVelocity : Vector2
-var player = Player
-var knockbackDirection = global_position.direction_to(player.global_position)
-var knockbackForce : int = 30
 
 func _ready() -> void:
 	player_target = get_tree().get_first_node_in_group("player")
 	start_position = collision_shape_2d.global_position
 	if can_chase == true:
 		player_detector.body_entered.connect(check_for_player)
-	player_detector.body_exited.connect(player_left)
+		player_detector.body_exited.connect(player_left)
 	chase_timer.timeout.connect(end_chase)
 	idle_timer.timeout.connect(return_to_start)
 	hurtbox.send_damage.connect(take_damage)
@@ -142,11 +139,17 @@ func end_chase() -> void:
 func return_to_start() -> void:
 	current_state = state.START
 
+func knockback():
+	can_chase = false
+	chase_timer.stop()
+	velocity = Vector2.RIGHT
+	await get_tree().create_timer(0.1).timeout
+	can_chase = true
+
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_dying == true:
 		idle_chaser.queue_free()
 
-func get_knockback(knockbackDirection, knockbackForce):
-	knockbackVelocity = knockbackDirection * knockbackForce
-	await get_tree().create_timer(0.1).timeout
-	knockbackVelocity = Vector2.ZERO
+func _on_hit_box_body_entered(body: Node2D) -> void:
+	if body is HurtBox:
+		knockback()

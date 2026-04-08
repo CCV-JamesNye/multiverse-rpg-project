@@ -131,4 +131,4 @@ func _on_animation_player_animation_finished(_anim_name: StringName) -> void:
 func _on_hurt_box_body_entered(body: Node2D) -> void:
 	if body.has_method("get_knockback"):
 		var knockbackDirection = global_position.direction_to(body.global_position)
-		body.get_knockback()
+		body.get_knockback(knockbackDirection, 30)
