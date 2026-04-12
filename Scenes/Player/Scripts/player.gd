@@ -8,16 +8,12 @@ class_name Player extends CharacterBody2D
 
 # Determines how fast the Player will move
 var speed : float = 350
-var direction : Vector2 = Vector2.ZERO
 var facing = "down"
 var health : int = 10
 var max_health : int = 10
 signal health_update (int)
 var is_attacking : bool = false
 var is_dying : bool = false
-var is_hit : bool = false
-var knockbackVelocity : Vector2 = Vector2.ZERO
-var knockback_direction : Vector2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -30,42 +26,41 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	# Stores current direction
+	var direction : Vector2 = Vector2.ZERO
+	
 	# Reads input
-	if Input.is_action_pressed("move_right") && is_attacking == false && is_hit == false && is_dying == false:
-		await get_tree().create_timer(0.00000001).timeout
+	if Input.is_action_pressed("move_right") && is_attacking == false && is_dying == false:
 		facing = "right"
 		play_anim(1)
 		direction.x += 1
 		direction.y = 0
-	if Input.is_action_pressed("move_left") && is_attacking == false && is_hit == false && is_dying == false:
+	if Input.is_action_pressed("move_left") && is_attacking == false && is_dying == false:
 		facing = "left"
 		play_anim(1)
 		direction.x -= 1
 		direction.y = 0
-	if Input.is_action_pressed("move_down")&& is_attacking == false && is_hit == false && is_dying == false:
+	if Input.is_action_pressed("move_down")&& is_attacking == false && is_dying == false:
 		facing = "down"
 		play_anim(1)
 		direction.y += 1
 		direction.x = 0
-	if Input.is_action_pressed("move_up") && is_attacking == false && is_hit == false && is_dying == false:
+	if Input.is_action_pressed("move_up") && is_attacking == false && is_dying == false:
 		facing = "up"
 		play_anim(1)
 		direction.y -= 1
 		direction.x = 0
-	if Input.is_action_pressed("attack") && is_attacking == false && is_hit == false && is_dying == false:
+	if Input.is_action_pressed("attack") && is_attacking == false && is_dying == false:
 		attack()
 		direction.y = 0
 		direction.x = 0
-	if !Input.is_anything_pressed() && is_attacking == false && is_hit == false && is_dying == false:
+	if !Input.is_anything_pressed() && is_attacking == false && is_dying == false:
 		play_anim(0)
 		direction.x = 0
 		direction.y = 0
 	
 	position += direction.normalized() * speed * delta
 	move_and_collide(velocity * delta)
-	pass
-
-func _physics_process(_delta: float) -> void:
 	pass
 
 func play_anim(movement):
@@ -122,25 +117,6 @@ func attack():
 		animation_player.play("sword_up")
 	if facing == "down":
 		animation_player.play("sword_down")
-
-func calculate_knockback_direction():
-	if facing == "right":
-		knockback_direction = Vector2.RIGHT
-	elif facing == "left":
-		knockback_direction = Vector2.LEFT
-	elif facing == "up":
-		knockback_direction = Vector2.UP
-	elif facing == "down":
-		knockback_direction = Vector2.DOWN
-
-func handle_knockback() -> void:
-	is_hit = true
-	knockbackVelocity = -350 * knockback_direction
-	direction = knockbackVelocity
-	await get_tree().create_timer(0.2).timeout
-	knockbackVelocity = Vector2.ZERO
-	direction = knockbackVelocity
-	pass
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_attacking == true:
