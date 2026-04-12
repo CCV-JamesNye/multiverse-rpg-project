@@ -1,12 +1,8 @@
 [gd_resource type="Resource" script_class="InfoTracker" format=3 uid="uid://c56l0euyvry47"]
 
-[sub_resource type="GDScript" id="GDScript_5tk40"]
-script/source = "class_name InfoTracker extends Resource
-
-var health : int = 10
-"
+[ext_resource type="Script" uid="uid://b87jkcd0kem6q" path="res://Scenes/Player/Resources/player_tracker.gd" id="1_4yblt"]
 
 [resource]
 resource_local_to_scene = true
 resource_name = "InfoTracker"
-script = SubResource("GDScript_5tk40")
+script = ExtResource("1_4yblt")

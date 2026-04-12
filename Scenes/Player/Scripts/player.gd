@@ -14,10 +14,11 @@ var max_health : int = 10
 signal health_update (int)
 var is_attacking : bool = false
 var is_dying : bool = false
+var player_tracker = preload("res://Scenes/Player/Resources/player_tracker.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	
+	health = GameManager.plr_health
 	hurtbox.send_damage.connect(take_damage)
 	animated_sprite_2d.play("idle_down")
 	
@@ -92,6 +93,7 @@ func play_anim(movement):
 func take_damage(damage: int) -> void:
 	health -= damage
 	health_update.emit(health)
+	GameManager.plr_health = health
 	animation_player_2.play("hit")
 	hit.play()
 	if health <= 0:

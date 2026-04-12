@@ -21,6 +21,7 @@ GameManager="*uid://bgsjpptio4s2a"
 PauseMenu="*uid://bmx4li7f6uhvk"
 SceneTransition="*uid://c8vygruipaq2m"
 RoomChangeHandler="*uid://b3jbvprik8m2f"
+Player_Tracker="*uid://b87jkcd0kem6q"
 
 [global_group]
 
