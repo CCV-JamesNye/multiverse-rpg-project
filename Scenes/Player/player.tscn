@@ -967,7 +967,7 @@ tracks/6/keys = {
 "start_offset": 0.038068477,
 "stream": ExtResource("3_htcer")
 }],
-"times": PackedFloat32Array(0.033333335)
+"times": PackedFloat32Array(0.038068477)
 }
 tracks/6/use_blend = true
 
@@ -982,10 +982,10 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f0jl8"]
-size = Vector2(31, 7)
+size = Vector2(31, 10)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_a3d8c"]
-size = Vector2(33, 9)
+size = Vector2(33, 12)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpcdj"]
 bg_color = Color(0.6965116, 0, 0, 1)
@@ -1042,7 +1042,8 @@ volume_db = 7.0
 bus = &"General SFX"
 
 [node name="Collision" type="CollisionShape2D" parent="." unique_id=139677064]
-position = Vector2(0.5, -3.5)
+visible = false
+position = Vector2(0.5, -5)
 shape = SubResource("RectangleShape2D_f0jl8")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=1932044046]
@@ -1052,7 +1053,7 @@ monitorable = false
 script = ExtResource("3_xpcdj")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=605629464]
-position = Vector2(0.5, -3.5)
+position = Vector2(0.5, -5)
 shape = SubResource("RectangleShape2D_a3d8c")
 debug_color = Color(0, 0.5058824, 0.25490198, 0.41960785)
 
@@ -1096,7 +1097,7 @@ monitorable = false
 script = ExtResource("4_mtuoh")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sword_Up" unique_id=2118630628]
-position = Vector2(-1, -36)
+position = Vector2(-1, -43)
 shape = SubResource("RectangleShape2D_htcer")
 debug_color = Color(0.90102446, 0, 0.16025886, 0.41960785)
 
