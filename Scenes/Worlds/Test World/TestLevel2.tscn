@@ -1,7 +1,7 @@
 [gd_scene format=4 uid="uid://i3254dx1wnb2"]
 
 [ext_resource type="Texture2D" uid="uid://d3vrrpucovlfg" path="res://Tilesets/Worlds/Homeworld/plains.png" id="1_vg47u"]
-[ext_resource type="AudioStream" path="res://Audio/Music/Equatorial Complex.mp3" id="1_wsgkt"]
+[ext_resource type="AudioStream" uid="uid://jv5105yag5nn" path="res://Audio/Music/Equatorial Complex.mp3" id="1_wsgkt"]
 [ext_resource type="PackedScene" uid="uid://b4d57yk8wcn4i" path="res://Scenes/General Use Scenes/SceneChangeArea.tscn" id="2_e7p4b"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="2_r5lu4"]
 [ext_resource type="Texture2D" uid="uid://5agetd8gwkkj" path="res://Tilesets/Worlds/Homeworld/grass.png" id="3_745yn"]
