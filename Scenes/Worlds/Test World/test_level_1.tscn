@@ -185,12 +185,11 @@ size = Vector2(96, 20)
 y_sort_enabled = true
 script = ExtResource("1_3vwn7")
 
-[node name="BGM" type="AudioStreamPlayer2D" parent="." unique_id=1935967409]
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=388107680]
 stream = ExtResource("2_ac0gi")
-volume_db = 5.0
 autoplay = true
 bus = &"BGM"
-parameters/looping = false
+parameters/looping = true
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=256344233]
 scale = Vector2(2, 2)
