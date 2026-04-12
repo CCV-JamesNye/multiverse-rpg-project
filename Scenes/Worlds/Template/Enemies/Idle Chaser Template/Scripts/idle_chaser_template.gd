@@ -144,13 +144,6 @@ func end_chase() -> void:
 func return_to_start() -> void:
 	current_state = state.START
 
-func knockback():
-	can_chase = false
-	chase_timer.stop()
-	velocity = Vector2.RIGHT
-	await get_tree().create_timer(0.1).timeout
-	can_chase = true
-
 func handle_knockback() -> void:
 	knockbackVelocity = -350 * direction
 	await get_tree().create_timer(0.2).timeout
@@ -160,7 +153,3 @@ func handle_knockback() -> void:
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_dying == true:
 		idle_chaser.queue_free()
-
-func _on_hit_box_body_entered(body: Node2D) -> void:
-	if body is HurtBox:
-		knockback()
