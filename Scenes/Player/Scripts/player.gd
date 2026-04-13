@@ -18,7 +18,6 @@ var player_tracker = preload("res://Scenes/Player/Resources/player_tracker.tres"
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	health = GameManager.plr_health
 	hurtbox.send_damage.connect(take_damage)
 	animated_sprite_2d.play("idle_down")
 	
@@ -28,6 +27,8 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	if GameManager.plr_health >= 1:
+		health = GameManager.plr_health
 	# Stores current direction
 	var direction : Vector2 = Vector2.ZERO
 	

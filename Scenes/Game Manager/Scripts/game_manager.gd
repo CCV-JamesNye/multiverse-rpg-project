@@ -1,6 +1,6 @@
 extends Node
 
-@export var plr_health : int = 10
+@export var plr_health : int
 
 func plr_die():
 	await SceneTransition.fade_to_black()
