@@ -1,8 +1,0 @@
-[gd_resource type="Resource" script_class="InfoTracker" format=3 uid="uid://c56l0euyvry47"]
-
-[ext_resource type="Script" uid="uid://b87jkcd0kem6q" path="res://Scenes/Player/Resources/player_tracker.gd" id="1_4yblt"]
-
-[resource]
-resource_local_to_scene = true
-resource_name = "InfoTracker"
-script = ExtResource("1_4yblt")

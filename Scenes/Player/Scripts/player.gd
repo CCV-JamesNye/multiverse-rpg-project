@@ -14,7 +14,6 @@ var max_health : int = 10
 signal health_update (int)
 var is_attacking : bool = false
 var is_dying : bool = false
-var player_tracker = preload("res://Scenes/Player/Resources/player_tracker.tres")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
