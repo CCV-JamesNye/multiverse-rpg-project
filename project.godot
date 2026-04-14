@@ -18,7 +18,6 @@ config/icon="res://icon.svg"
 [autoload]
 
 GameManager="*uid://bgsjpptio4s2a"
-SavedVariables="*uid://7rdtelcjgy78"
 PauseMenu="*uid://bmx4li7f6uhvk"
 SceneTransition="*uid://c8vygruipaq2m"
 RoomChangeHandler="*uid://b3jbvprik8m2f"
