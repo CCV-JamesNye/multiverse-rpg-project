@@ -988,7 +988,7 @@ size = Vector2(26, 6)
 size = Vector2(28, 8)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xpcdj"]
-bg_color = Color(0.6965116, 0, 0, 1)
+bg_color = Color(1, 1, 1, 1)
 corner_radius_top_left = 6
 corner_radius_top_right = 6
 corner_radius_bottom_right = 6
