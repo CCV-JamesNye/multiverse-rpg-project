@@ -1,5 +1,6 @@
 [gd_scene format=4 uid="uid://i3254dx1wnb2"]
 
+[ext_resource type="Script" uid="uid://ce8vxkrls0c5w" path="res://Scenes/Worlds/Test World/Scripts/test_level_2.gd" id="1_oytui"]
 [ext_resource type="AudioStream" uid="uid://b1rq88aq1gvl4" path="res://Audio/Music/Equatorial Complex (Project).mp3" id="1_v06n4"]
 [ext_resource type="Texture2D" uid="uid://d3vrrpucovlfg" path="res://Tilesets/Worlds/Homeworld/plains.png" id="1_vg47u"]
 [ext_resource type="PackedScene" uid="uid://b4d57yk8wcn4i" path="res://Scenes/General Use Scenes/SceneChangeArea.tscn" id="2_e7p4b"]
@@ -3536,6 +3537,7 @@ size = Vector2(96, 20)
 size = Vector2(74, 45)
 
 [node name="TestLevel2" type="Node2D" unique_id=1839628372]
+script = ExtResource("1_oytui")
 
 [node name="BGM2" type="AudioStreamPlayer" parent="." unique_id=240464899]
 stream = ExtResource("1_v06n4")
@@ -3582,6 +3584,7 @@ shape = SubResource("RectangleShape2D_ex0eg")
 [node name="SceneChangeArea2" parent="." unique_id=462879570 instance=ExtResource("2_e7p4b")]
 position = Vector2(818.7501, 168.75003)
 connected_room = "res://Scenes/Worlds/Test World/TestLevel3.tscn"
+player_positon = Vector2(0, 561)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChangeArea2" unique_id=1780232920]
 position = Vector2(702.2499, -144.25003)

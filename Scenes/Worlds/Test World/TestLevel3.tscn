@@ -1,9 +1,11 @@
 [gd_scene format=4 uid="uid://cd7ydkf3j3e3f"]
 
+[ext_resource type="Script" uid="uid://bm4bp6xco863t" path="res://Scenes/Worlds/Test World/Scripts/test_level_3.gd" id="1_1dgnu"]
 [ext_resource type="AudioStream" uid="uid://b1rq88aq1gvl4" path="res://Audio/Music/Equatorial Complex (Project).mp3" id="1_j7nso"]
 [ext_resource type="Texture2D" uid="uid://dryss2h7sbg7v" path="res://Tilesets/Worlds/Hidden Lab World/tileset x1.png" id="1_j56vf"]
 [ext_resource type="Texture2D" uid="uid://be6ovrflifaj" path="res://Sprites/Worlds/Hidden Lab World/props and items x1.png" id="2_diqim"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="3_diqim"]
+[ext_resource type="PackedScene" uid="uid://8w6pjiujwtf1" path="res://Scenes/Worlds/Hidden Lab World/Enemies/FlyingRobot.tscn" id="5_1l8bt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7nso"]
 texture = ExtResource("1_j56vf")
@@ -2317,6 +2319,7 @@ sources/1 = SubResource("TileSetAtlasSource_1dgnu")
 sources/2 = SubResource("TileSetAtlasSource_2i0su")
 
 [node name="TestLevel3" type="Node2D" unique_id=1121952943]
+script = ExtResource("1_1dgnu")
 
 [node name="BGM2" type="AudioStreamPlayer" parent="." unique_id=1535583312]
 stream = ExtResource("1_j7nso")
@@ -2346,3 +2349,6 @@ limit_right = 1152
 limit_bottom = 641
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="FlyingRobot" parent="." unique_id=1958446828 instance=ExtResource("5_1l8bt")]
+position = Vector2(863, 336)
