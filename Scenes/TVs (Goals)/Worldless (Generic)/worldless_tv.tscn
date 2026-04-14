@@ -54,7 +54,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s3vjd"]
-size = Vector2(72, 36)
+size = Vector2(70, 34)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_50uxt"]
 size = Vector2(72, 36)
@@ -69,7 +69,6 @@ sprite_frames = SubResource("SpriteFrames_cnwwf")
 frame_progress = 0.33741346
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=634141610]
-collision_layer = 16
 collision_mask = 15
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=251069988]
