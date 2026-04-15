@@ -3558,16 +3558,6 @@ tile_set = SubResource("TileSet_wsgkt")
 [node name="Player" parent="." unique_id=642040466 instance=ExtResource("2_r5lu4")]
 position = Vector2(1339, 189)
 
-[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1201358531]
-position = Vector2(-2, -1)
-zoom = Vector2(1.2, 1.2)
-limit_left = 0
-limit_top = 0
-limit_right = 2752
-limit_bottom = 648
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
-
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=730673067]
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AABJAP//BAAUAAUAAABFAAcABAAMAAAAAABNAAcABAAMAAAAAABFAA0ABAAMAAQAAABNAA0ABAAMAAQAAAA=")
@@ -3589,3 +3579,13 @@ player_positon = Vector2(0, 561)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChangeArea2" unique_id=1780232920]
 position = Vector2(702.2499, -144.25003)
 shape = SubResource("RectangleShape2D_7xtqw")
+
+[node name="Camera2D" type="Camera2D" parent="." unique_id=1201358531]
+position = Vector2(1337, 188)
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_top = 0
+limit_right = 2752
+limit_bottom = 648
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0

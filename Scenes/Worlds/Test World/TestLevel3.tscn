@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://be6ovrflifaj" path="res://Sprites/Worlds/Hidden Lab World/props and items x1.png" id="2_diqim"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="3_diqim"]
 [ext_resource type="PackedScene" uid="uid://8w6pjiujwtf1" path="res://Scenes/Worlds/Hidden Lab World/Enemies/FlyingRobot.tscn" id="5_1l8bt"]
+[ext_resource type="PackedScene" uid="uid://bg3kq8dbxy7n3" path="res://Scenes/Puzzle Stuff/Door/HiddenLabDoor.tscn" id="7_2i0su"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7nso"]
 texture = ExtResource("1_j56vf")
@@ -2352,3 +2353,9 @@ position_smoothing_speed = 8.0
 
 [node name="FlyingRobot" parent="." unique_id=1958446828 instance=ExtResource("5_1l8bt")]
 position = Vector2(863, 336)
+
+[node name="FlyingRobot2" parent="." unique_id=1866836179 instance=ExtResource("5_1l8bt")]
+position = Vector2(100, 497)
+
+[node name="HiddenLabDoor" parent="." unique_id=995399566 instance=ExtResource("7_2i0su")]
+position = Vector2(557, 42)

@@ -14,12 +14,12 @@ class_name FlyingRobot
 
 @export var patrol_speed: float = 110.0
 var direction : Vector2 = Vector2.DOWN
-var facing = "down"
+var facing = "right"
 enum state {IDLE, PATROL, CHASE, START, DIE}
 var current_state : state = state.IDLE
 var player_target = Player
 @onready var start_position
-var health : int = 8
+var health : int = 2
 var can_chase : bool = true
 signal health_update (int)
 @export var flying_robot_instance = flying_robot
@@ -55,11 +55,7 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity * delta)
 
 func handle_idle() -> void:
-	if facing == "down":
-		animated_sprite_2d.play("idle_down")
-	elif facing == "up":
-		animated_sprite_2d.play("idle_up")
-	elif facing == "right":
+	if facing == "right":
 		animated_sprite_2d.play("idle_side")
 		animated_sprite_2d.flip_h = false
 	elif facing == "left":
@@ -113,6 +109,10 @@ func handle_start() -> void:
 		facing = "right"
 	velocity = direction * patrol_speed
 	animated_sprite_2d.play("walk_side")
+	if facing == "right":
+		animated_sprite_2d.flip_h = false
+	elif facing == "left":
+		animated_sprite_2d.flip_h = true
 	if collision_shape_2d.global_position.distance_to(start_position) < 1:
 		current_state = state.IDLE
 

@@ -113,6 +113,10 @@ func handle_start() -> void:
 		facing = "right"
 	velocity = direction * patrol_speed
 	animated_sprite_2d.play("walk_side")
+	if facing == "right":
+		animated_sprite_2d.flip_h = false
+	elif facing == "left":
+		animated_sprite_2d.flip_h = true
 	if collision_shape_2d.global_position.distance_to(start_position) < 1:
 		current_state = state.IDLE
 
