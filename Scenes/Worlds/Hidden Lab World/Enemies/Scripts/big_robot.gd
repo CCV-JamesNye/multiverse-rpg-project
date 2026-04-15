@@ -1,7 +1,7 @@
 extends CharacterBody2D
-class_name IdleChaser
+class_name BigRobot
 
-@onready var idle_chaser: IdleChaser = $"."
+@onready var big_robot: BigRobot = $"."
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_detector: Area2D = $PlayerDetector
@@ -13,17 +13,17 @@ class_name IdleChaser
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 
-@export var patrol_speed: float = 110.0
+@export var patrol_speed: float
 var direction : Vector2 = Vector2.DOWN
-var facing = "down"
+var facing = "right"
 enum state {IDLE, PATROL, CHASE, START, DIE}
 var current_state : state = state.IDLE
 var player_target = Player
 @onready var start_position
-var health : int = 8
+var health : int = 4
 var can_chase : bool = true
 signal health_update (int)
-@export var idle_chaser_instance = idle_chaser
+@export var big_robot_instance = big_robot
 var is_dying : bool = false
 var knockbackVelocity : Vector2 = Vector2.ZERO
 
@@ -56,11 +56,7 @@ func _physics_process(delta: float) -> void:
 	move_and_collide(velocity * delta)
 
 func handle_idle() -> void:
-	if facing == "down":
-		animated_sprite_2d.play("idle_down")
-	elif facing == "up":
-		animated_sprite_2d.play("idle_up")
-	elif facing == "right":
+	if facing == "right":
 		animated_sprite_2d.play("idle_side")
 		animated_sprite_2d.flip_h = false
 	elif facing == "left":
@@ -171,7 +167,7 @@ func handle_knockback() -> void:
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_dying == true:
-		idle_chaser.queue_free()
+		big_robot.queue_free()
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body is HurtBox:

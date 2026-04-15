@@ -11,8 +11,9 @@ class_name FlyingRobot
 @onready var hurtbox: HurtBox = $HurtBox
 @onready var hit_sound: AudioStreamPlayer2D = $HitSound
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
+@onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 
-@export var patrol_speed: float = 110.0
+@export var patrol_speed: float
 var direction : Vector2 = Vector2.DOWN
 var facing = "right"
 enum state {IDLE, PATROL, CHASE, START, DIE}
@@ -123,6 +124,7 @@ func handle_die() -> void:
 	idle_timer.stop()
 	velocity = Vector2.ZERO
 	animated_sprite_2d.play("die")
+	animation_player_2.play("die")
 
 func take_damage(damage: int) -> void:
 	health -= damage

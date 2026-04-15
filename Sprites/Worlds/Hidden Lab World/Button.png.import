@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dbtmn2pcgi8un"
-path="res://.godot/imported/FlyingRobot.png-fda5c5ffa62cb5f319b8374b936ef72d.ctex"
+uid="uid://d0llxxpk1146o"
+path="res://.godot/imported/Button.png-da275ee7ff56d3f86efaa19431636a3b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Worlds/Hidden Lab World/Enemies/FlyingRobot.png"
-dest_files=["res://.godot/imported/FlyingRobot.png-fda5c5ffa62cb5f319b8374b936ef72d.ctex"]
+source_file="res://Sprites/Worlds/Hidden Lab World/Button.png"
+dest_files=["res://.godot/imported/Button.png-da275ee7ff56d3f86efaa19431636a3b.ctex"]
 
 [params]
 

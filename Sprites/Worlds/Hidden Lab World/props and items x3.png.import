@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://brhmhppf24qo6"
-path="res://.godot/imported/BigRobotIdle.png-39263d01f85f5057d48a284c409d4ca3.ctex"
+uid="uid://buu2xjl4ud015"
+path="res://.godot/imported/props and items x3.png-d52db1ce59425d66acf544dc559a96cc.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Sprites/Worlds/Hidden Lab World/Enemies/Big Robot/BigRobotIdle.png"
-dest_files=["res://.godot/imported/BigRobotIdle.png-39263d01f85f5057d48a284c409d4ca3.ctex"]
+source_file="res://Sprites/Worlds/Hidden Lab World/props and items x3.png"
+dest_files=["res://.godot/imported/props and items x3.png-d52db1ce59425d66acf544dc559a96cc.ctex"]
 
 [params]
 

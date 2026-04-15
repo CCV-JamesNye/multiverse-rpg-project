@@ -1,6 +1,8 @@
 extends Node
 
 @export var plr_health : int
+signal any_button_pressed
+var button_id : int
 
 func plr_die():
 	SceneTransition.save_scene()

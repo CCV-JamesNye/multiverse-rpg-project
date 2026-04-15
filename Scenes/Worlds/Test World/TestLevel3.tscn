@@ -6,7 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://be6ovrflifaj" path="res://Sprites/Worlds/Hidden Lab World/props and items x1.png" id="2_diqim"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="3_diqim"]
 [ext_resource type="PackedScene" uid="uid://8w6pjiujwtf1" path="res://Scenes/Worlds/Hidden Lab World/Enemies/FlyingRobot.tscn" id="5_1l8bt"]
+[ext_resource type="PackedScene" uid="uid://c148aqi17mn3s" path="res://Scenes/Puzzle Stuff/Button/HiddenLabButton.tscn" id="6_ravuj"]
 [ext_resource type="PackedScene" uid="uid://bg3kq8dbxy7n3" path="res://Scenes/Puzzle Stuff/Door/HiddenLabDoor.tscn" id="7_2i0su"]
+[ext_resource type="PackedScene" uid="uid://e2lwuftm1wap" path="res://Scenes/Worlds/Hidden Lab World/Enemies/BigRobot.tscn" id="7_52ii1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7nso"]
 texture = ExtResource("1_j56vf")
@@ -2320,6 +2322,7 @@ sources/1 = SubResource("TileSetAtlasSource_1dgnu")
 sources/2 = SubResource("TileSetAtlasSource_2i0su")
 
 [node name="TestLevel3" type="Node2D" unique_id=1121952943]
+y_sort_enabled = true
 script = ExtResource("1_1dgnu")
 
 [node name="BGM2" type="AudioStreamPlayer" parent="." unique_id=1535583312]
@@ -2335,8 +2338,32 @@ tile_set = SubResource("TileSet_1l8bt")
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="." unique_id=1123849076]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAdAAwAAQBAAAIAAAAFAAUAAQBAAAIAAAAJAA0AAQBAAAQAAAAOABMAAQAKAAAAAAAPABMAAQALAAAAAAARABMAAgAAABwAAAATABMAAQAKAAAAAAAUABMAAQALAAAAAAAOAAAAAQAKAAAAAAAPAAAAAQALAAAAAAATAAAAAQAKAAAAAAAUAAAAAQALAAAAAAA=")
+tile_map_data = PackedByteArray("AAAdAAwAAQBAAAIAAAAFAAUAAQBAAAIAAAAJAA0AAQBAAAQAAAAOABMAAQAKAAAAAAAPABMAAQALAAAAAAARABMAAgAAABwAAAATABMAAQAKAAAAAAAUABMAAQALAAAAAAATAAAAAQAKAAAAAAAUAAAAAQALAAAAAAAOAAAAAQAKAAAAAAAPAAAAAQALAAAAAAA=")
 tile_set = SubResource("TileSet_52ii1")
+
+[node name="HiddenLabDoor" parent="." unique_id=995399566 instance=ExtResource("7_2i0su")]
+position = Vector2(561, 44)
+
+[node name="HiddenLabDoor2" parent="." unique_id=633647602 instance=ExtResource("7_2i0su")]
+position = Vector2(882, 43)
+door_id = 1
+
+[node name="HiddenLabButton" parent="." unique_id=1469508311 instance=ExtResource("6_ravuj")]
+position = Vector2(572, 193)
+
+[node name="HiddenLabButton2" parent="." unique_id=809636669 instance=ExtResource("6_ravuj")]
+position = Vector2(665, 193)
+button_id = 1
+
+[node name="BigRobot" parent="." unique_id=1635130276 instance=ExtResource("7_52ii1")]
+position = Vector2(153, 436)
+patrol_speed = 80.0
+
+[node name="FlyingRobot" parent="." unique_id=1958446828 instance=ExtResource("5_1l8bt")]
+z_index = 1
+y_sort_enabled = true
+position = Vector2(863, 336)
+patrol_speed = 110.0
 
 [node name="Player" parent="." unique_id=642040466 instance=ExtResource("3_diqim")]
 position = Vector2(335, 251)
@@ -2345,17 +2372,8 @@ position = Vector2(335, 251)
 position = Vector2(-2, -1)
 zoom = Vector2(1.2, 1.2)
 limit_left = 0
-limit_top = 0
+limit_top = -61
 limit_right = 1152
 limit_bottom = 641
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
-
-[node name="FlyingRobot" parent="." unique_id=1958446828 instance=ExtResource("5_1l8bt")]
-position = Vector2(863, 336)
-
-[node name="FlyingRobot2" parent="." unique_id=1866836179 instance=ExtResource("5_1l8bt")]
-position = Vector2(100, 497)
-
-[node name="HiddenLabDoor" parent="." unique_id=995399566 instance=ExtResource("7_2i0su")]
-position = Vector2(557, 42)

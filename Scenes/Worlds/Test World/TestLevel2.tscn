@@ -3388,12 +3388,6 @@ texture = ExtResource("6_v06n4")
 9:4/0 = 0
 10:4/0 = 0
 11:4/0 = 0
-12:4/animation_columns = 3
-12:4/animation_speed = 8.0
-12:4/animation_frame_0/duration = 1.0
-12:4/animation_frame_1/duration = 1.0
-12:4/animation_frame_2/duration = 1.0
-12:4/0 = 0
 0:5/0 = 0
 1:5/0 = 0
 2:5/0 = 0
@@ -3406,13 +3400,6 @@ texture = ExtResource("6_v06n4")
 9:5/0 = 0
 10:5/0 = 0
 11:5/0 = 0
-12:5/animation_columns = 3
-12:5/animation_speed = 8.0
-12:5/animation_frame_0/duration = 1.0
-12:5/animation_frame_1/duration = 1.0
-12:5/animation_frame_2/duration = 1.0
-12:5/0 = 0
-12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 15:5/0 = 0
 17:5/0 = 0
 18:5/0 = 0
@@ -3456,19 +3443,27 @@ texture = ExtResource("6_v06n4")
 19:7/0 = 0
 20:5/size_in_atlas = Vector2i(4, 3)
 20:5/0 = 0
+12:4/animation_columns = 3
+12:4/animation_speed = 8.0
+12:4/animation_frame_0/duration = 1.0
+12:4/animation_frame_1/duration = 1.0
+12:4/animation_frame_2/duration = 1.0
+12:4/0 = 0
+12:5/animation_columns = 3
+12:5/animation_speed = 8.0
+12:5/animation_frame_0/duration = 1.0
+12:5/animation_frame_1/duration = 1.0
+12:5/animation_frame_2/duration = 1.0
+12:5/0 = 0
+12:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
+12:0/size_in_atlas = Vector2i(1, 2)
 12:0/animation_columns = 3
 12:0/animation_speed = 8.0
 12:0/animation_frame_0/duration = 1.0
 12:0/animation_frame_1/duration = 1.0
 12:0/animation_frame_2/duration = 1.0
 12:0/0 = 0
-12:1/animation_columns = 3
-12:1/animation_speed = 8.0
-12:1/animation_frame_0/duration = 1.0
-12:1/animation_frame_1/duration = 1.0
-12:1/animation_frame_2/duration = 1.0
-12:1/0 = 0
-12:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
+12:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, 4, 8, 4, 8, 16, -8, 16)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tuqpr"]
 texture = ExtResource("7_oytui")
@@ -3537,6 +3532,7 @@ size = Vector2(96, 20)
 size = Vector2(74, 45)
 
 [node name="TestLevel2" type="Node2D" unique_id=1839628372]
+y_sort_enabled = true
 script = ExtResource("1_oytui")
 
 [node name="BGM2" type="AudioStreamPlayer" parent="." unique_id=240464899]
@@ -3551,16 +3547,28 @@ tile_map_data = PackedByteArray("AAATAAAAAAABAAEAAAATAAEAAAABAAEAAAAVAAAAAAADAAE
 tile_set = SubResource("TileSet_e7p4b")
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="." unique_id=633218967]
+y_sort_enabled = true
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AAAFAAsAAAAAAAAAAAAWAA8AAAAAAAAAAAAeAA0AAAAAAAAAAAAfAAkAAAAAAAAAAAATAAUAAAAAAAAAAAAgABIAAAACAAQAAAAHABEAAAACAAQAAAAUAA0AAAACAAQAAAAYAAcAAAACAAQAAAAfAAYAAAACAAQAAAABAA4AAAADAAAAAAADAA4AAAADAAAAAAABABAAAAADAAAAAAADABAAAAADAAAAAAACAA8AAAAAAAQAAAADAAcAAAABAAAAAAACAAMAAAABAAAAAAAMAAIAAAABAAAAAAALAAkAAAABAAAAAABJAP//BAAUAAUAAABFAAgABAAMAAEAAABNAAgABAAMAAEAAABFAA4ABAAMAAUAAABNAA4ABAAMAAUAAAA5AA0AAQBAAAIAAAAnAA4AAQBAAAQAAAAvAAAAAgAAABwAAAAsAAAAAQAKAAAAAAAtAAAAAQALAAAAAAAxAAAAAQAKAAAAAAAyAAAAAQALAAAAAAA=")
+tile_map_data = PackedByteArray("AAAFAAsAAAAAAAAAAAAWAA8AAAAAAAAAAAAeAA0AAAAAAAAAAAAfAAkAAAAAAAAAAAATAAUAAAAAAAAAAAAgABIAAAACAAQAAAAHABEAAAACAAQAAAAUAA0AAAACAAQAAAAYAAcAAAACAAQAAAAfAAYAAAACAAQAAAABAA4AAAADAAAAAAADAA4AAAADAAAAAAABABAAAAADAAAAAAADABAAAAADAAAAAAACAA8AAAAAAAQAAAADAAcAAAABAAAAAAACAAMAAAABAAAAAAAMAAIAAAABAAAAAAALAAkAAAABAAAAAABJAP//BAAUAAUAAAA5AA0AAQBAAAIAAAAnAA4AAQBAAAQAAAAvAAAAAgAAABwAAAAsAAAAAQAKAAAAAAAtAAAAAQALAAAAAAAxAAAAAQAKAAAAAAAyAAAAAQALAAAAAABFAA0ABAAMAAQAAABNAA0ABAAMAAQAAABFAAcABAAMAAAAAABNAAcABAAMAAAAAAA=")
 tile_set = SubResource("TileSet_wsgkt")
 
 [node name="Player" parent="." unique_id=642040466 instance=ExtResource("2_r5lu4")]
+y_sort_enabled = true
 position = Vector2(1339, 189)
+
+[node name="Camera2D" type="Camera2D" parent="Player" unique_id=1201358531]
+position = Vector2(-2, -1)
+zoom = Vector2(1.2, 1.2)
+limit_left = 0
+limit_top = 0
+limit_right = 2752
+limit_bottom = 648
+position_smoothing_enabled = true
+position_smoothing_speed = 8.0
 
 [node name="TileMapLayer2" type="TileMapLayer" parent="." unique_id=730673067]
 scale = Vector2(2, 2)
-tile_map_data = PackedByteArray("AABJAP//BAAUAAUAAABFAAcABAAMAAAAAABNAAcABAAMAAAAAABFAA0ABAAMAAQAAABNAA0ABAAMAAQAAAA=")
+tile_map_data = PackedByteArray("AABJAP//BAAUAAUAAABFAAgABAAMAAEAAABNAAgABAAMAAEAAABFAA4ABAAMAAUAAABNAA4ABAAMAAUAAAA=")
 tile_set = SubResource("TileSet_wsgkt")
 
 [node name="SceneChangeArea" parent="." unique_id=1727681937 instance=ExtResource("2_e7p4b")]
@@ -3579,13 +3587,3 @@ player_positon = Vector2(0, 561)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChangeArea2" unique_id=1780232920]
 position = Vector2(702.2499, -144.25003)
 shape = SubResource("RectangleShape2D_7xtqw")
-
-[node name="Camera2D" type="Camera2D" parent="." unique_id=1201358531]
-position = Vector2(1337, 188)
-zoom = Vector2(1.2, 1.2)
-limit_left = 0
-limit_top = 0
-limit_right = 2752
-limit_bottom = 648
-position_smoothing_enabled = true
-position_smoothing_speed = 8.0
