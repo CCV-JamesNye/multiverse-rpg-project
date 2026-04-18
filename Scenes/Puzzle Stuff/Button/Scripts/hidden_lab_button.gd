@@ -12,7 +12,7 @@ var current_state : state = state.UNPRESSED
 func _ready() -> void:
 	pass
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	match current_state:
 		state.UNPRESSED:
 			unpessed()
@@ -29,8 +29,8 @@ func pressed():
 	GameManager.any_button_pressed.emit()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	current_state = state.PRESSED

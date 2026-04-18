@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://be6ovrflifaj" path="res://Sprites/Worlds/Hidden Lab World/props and items x1.png" id="2_diqim"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="3_diqim"]
 [ext_resource type="PackedScene" uid="uid://8w6pjiujwtf1" path="res://Scenes/Worlds/Hidden Lab World/Enemies/FlyingRobot.tscn" id="5_1l8bt"]
+[ext_resource type="PackedScene" uid="uid://cmoqqmqjw6hcr" path="res://Scenes/Puzzle Stuff/Door/HiddenLabSmallDoor.tscn" id="6_dnr1c"]
 [ext_resource type="PackedScene" uid="uid://c148aqi17mn3s" path="res://Scenes/Puzzle Stuff/Button/HiddenLabButton.tscn" id="6_ravuj"]
 [ext_resource type="PackedScene" uid="uid://bg3kq8dbxy7n3" path="res://Scenes/Puzzle Stuff/Door/HiddenLabDoor.tscn" id="7_2i0su"]
 [ext_resource type="PackedScene" uid="uid://e2lwuftm1wap" path="res://Scenes/Worlds/Hidden Lab World/Enemies/BigRobot.tscn" id="7_52ii1"]
@@ -2344,8 +2345,8 @@ tile_set = SubResource("TileSet_52ii1")
 [node name="HiddenLabDoor" parent="." unique_id=995399566 instance=ExtResource("7_2i0su")]
 position = Vector2(561, 44)
 
-[node name="HiddenLabDoor2" parent="." unique_id=633647602 instance=ExtResource("7_2i0su")]
-position = Vector2(882, 43)
+[node name="HiddenLabDoor2" parent="." unique_id=165202033 instance=ExtResource("6_dnr1c")]
+position = Vector2(860, 53)
 door_id = 1
 
 [node name="HiddenLabButton" parent="." unique_id=1469508311 instance=ExtResource("6_ravuj")]

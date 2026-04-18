@@ -3,11 +3,9 @@ class_name HiddenLabDoor
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-@onready var debug_open: Area2D = $DebugOpen
 const hidden_lab_button = preload("res://Scenes/Puzzle Stuff/Button/HiddenLabButton.tscn")
 
 @export var door_id : int
-signal button_pressed
 enum state {CLOSED, OPEN}
 var current_state : state = state.CLOSED
 var is_opened : bool = false

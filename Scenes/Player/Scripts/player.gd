@@ -7,7 +7,7 @@ class_name Player extends CharacterBody2D
 @onready var hit: AudioStreamPlayer2D = $Hit
 
 # Determines how fast the Player will move
-var speed : float = 350
+@export var speed : float = 350
 var facing = "down"
 var health : int = 10
 var max_health : int = 10
