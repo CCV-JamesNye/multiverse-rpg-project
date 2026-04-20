@@ -543,14 +543,13 @@ size = Vector2(38, 15)
 
 [node name="BigRobot" type="CharacterBody2D" unique_id=1635130276]
 script = ExtResource("1_jkmti")
+patrol_speed = 80.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2053618990]
 position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_3xx88")
-animation = &"die"
-frame = 7
-frame_progress = 1.0
+animation = &"idle_side"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1460812900]
 libraries/ = SubResource("AnimationLibrary_jwpal")
