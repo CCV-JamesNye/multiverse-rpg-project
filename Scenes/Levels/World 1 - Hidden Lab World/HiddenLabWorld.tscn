@@ -11,6 +11,9 @@
 [ext_resource type="PackedScene" uid="uid://dgedp4tmd3826" path="res://Scenes/Levels/World 1 - Hidden Lab World/LabLevel4.tscn" id="6_43eck"]
 [ext_resource type="PackedScene" uid="uid://c148aqi17mn3s" path="res://Scenes/Puzzle Stuff/Button/HiddenLabButton.tscn" id="6_xx3sp"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s00jk"]
+size = Vector2(20, 66)
+
 [node name="HiddenLabWorld" type="Node2D" unique_id=418888131]
 y_sort_enabled = true
 script = ExtResource("1_s00jk")
@@ -56,3 +59,66 @@ position = Vector2(324, 251)
 
 [node name="HiddenLabButton" parent="." unique_id=1469508311 instance=ExtResource("6_xx3sp")]
 position = Vector2(320, 155)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1293439333]
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=383070440]
+position = Vector2(-58, 222)
+shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="." unique_id=185980132]
+position = Vector2(256, 155)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2" unique_id=1706849707]
+position = Vector2(-58, 199)
+shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="." unique_id=2055989517]
+position = Vector2(1076, 156)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3" unique_id=1645851687]
+position = Vector2(-58, 199)
+shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="StaticBody2D4" type="StaticBody2D" parent="." unique_id=1632753702]
+position = Vector2(1344, 223)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D4" unique_id=233707909]
+position = Vector2(-58, 199)
+shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="StaticBody2D5" type="StaticBody2D" parent="." unique_id=1716621536]
+position = Vector2(2004, 225)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D5" unique_id=214879305]
+position = Vector2(-58, 199)
+shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="StaticBody2D6" type="StaticBody2D" parent="." unique_id=684482013]
+position = Vector2(384, 382)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D6" unique_id=502020378]
+position = Vector2(-58, 199)
+shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="StaticBody2D7" type="StaticBody2D" parent="." unique_id=962076764]
+position = Vector2(496, 671)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7" unique_id=2031344157]
+position = Vector2(-58, 199)
+shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D7" unique_id=141743717]
+position = Vector2(1348, -1)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7/StaticBody2D2" unique_id=1253752966]
+position = Vector2(-58, 199)
+shape = SubResource("RectangleShape2D_s00jk")
