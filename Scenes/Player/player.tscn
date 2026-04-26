@@ -566,6 +566,18 @@ tracks/13/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/14/type = "value"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("HurtBox:monitoring")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_gk6dx"]
 resource_name = "hit"
@@ -581,6 +593,22 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1),
 "update": 0,
 "values": [Color(0.76124406, 0.17817307, 0, 1), Color(0.7607843, 0.1764706, 0, 1), Color(0.7607843, 0.1764706, 0, 1), Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_jhyir"]
+resource_name = "hit2"
+length = 0.50000334
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HurtBox:monitoring")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
 }
 
 [sub_resource type="Animation" id="Animation_0u5uq"]
@@ -975,6 +1003,7 @@ tracks/6/use_blend = true
 _data = {
 &"RESET": SubResource("Animation_mtuoh"),
 &"hit": SubResource("Animation_gk6dx"),
+&"hit2": SubResource("Animation_jhyir"),
 &"sword_down": SubResource("Animation_0u5uq"),
 &"sword_left": SubResource("Animation_jlvik"),
 &"sword_right": SubResource("Animation_htcer"),
@@ -1030,6 +1059,9 @@ flip_h = true
 libraries/ = SubResource("AnimationLibrary_dd0ac")
 
 [node name="AnimationPlayer2" type="AnimationPlayer" parent="." unique_id=261008235]
+libraries/ = SubResource("AnimationLibrary_dd0ac")
+
+[node name="AnimationPlayer3" type="AnimationPlayer" parent="." unique_id=675447640]
 libraries/ = SubResource("AnimationLibrary_dd0ac")
 
 [node name="SwingSword" type="AudioStreamPlayer2D" parent="." unique_id=1071420950]
@@ -1112,6 +1144,8 @@ script = ExtResource("4_mtuoh")
 position = Vector2(1, 7)
 shape = SubResource("RectangleShape2D_htcer")
 debug_color = Color(0.90102446, 0, 0.16025886, 0.41960785)
+
+[node name="HitTimer" type="Timer" parent="." unique_id=1000369881]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

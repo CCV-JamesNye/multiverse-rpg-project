@@ -5,6 +5,7 @@ class_name Player extends CharacterBody2D
 @onready var animation_player_2: AnimationPlayer = $AnimationPlayer2
 @onready var hurtbox: Area2D = $HurtBox
 @onready var hit: AudioStreamPlayer2D = $Hit
+@onready var animation_player_3: AnimationPlayer = $AnimationPlayer3
 
 # Determines how fast the Player will move
 @export var speed : float = 350
@@ -96,6 +97,7 @@ func take_damage(damage: int) -> void:
 	GameManager.plr_health = health
 	animation_player_2.play("hit")
 	hit.play()
+	animation_player_3.play("hit2")
 	if health <= 0:
 		die()
 
