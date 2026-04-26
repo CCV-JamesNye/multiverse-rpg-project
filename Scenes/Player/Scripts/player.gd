@@ -32,27 +32,27 @@ func _process(delta: float) -> void:
 	var direction : Vector2 = Vector2.ZERO
 	
 	# Reads input
-	if Input.is_action_pressed("move_right") && is_attacking == false && is_dying == false:
-		facing = "right"
-		play_anim(1)
-		direction.x += 1
-		direction.y = 0
-	if Input.is_action_pressed("move_left") && is_attacking == false && is_dying == false:
-		facing = "left"
-		play_anim(1)
-		direction.x -= 1
-		direction.y = 0
 	if Input.is_action_pressed("move_down")&& is_attacking == false && is_dying == false:
 		facing = "down"
 		play_anim(1)
 		direction.y += 1
 		direction.x = 0
-	if Input.is_action_pressed("move_up") && is_attacking == false && is_dying == false:
+	elif Input.is_action_pressed("move_up") && is_attacking == false && is_dying == false:
 		facing = "up"
 		play_anim(1)
 		direction.y -= 1
 		direction.x = 0
-	if Input.is_action_pressed("attack") && is_attacking == false && is_dying == false:
+	elif Input.is_action_pressed("move_right") && is_attacking == false && is_dying == false:
+		facing = "right"
+		play_anim(1)
+		direction.x += 1
+		direction.y = 0
+	elif Input.is_action_pressed("move_left") && is_attacking == false && is_dying == false:
+		facing = "left"
+		play_anim(1)
+		direction.x -= 1
+		direction.y = 0
+	elif Input.is_action_pressed("attack") && is_attacking == false && is_dying == false:
 		attack()
 		direction.y = 0
 		direction.x = 0

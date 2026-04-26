@@ -115,10 +115,18 @@ collision_mask = 30
 position = Vector2(-58, 199)
 shape = SubResource("RectangleShape2D_s00jk")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="StaticBody2D7" unique_id=141743717]
-position = Vector2(1348, -1)
+[node name="StaticBody2D8" type="StaticBody2D" parent="." unique_id=141743717]
+position = Vector2(1844, 670)
 collision_mask = 30
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D7/StaticBody2D2" unique_id=1253752966]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D8" unique_id=1253752966]
+position = Vector2(-58, 199)
+shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="StaticBody2D9" type="StaticBody2D" parent="." unique_id=551450489]
+position = Vector2(757, -6)
+collision_mask = 30
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D9" unique_id=967575503]
 position = Vector2(-58, 199)
 shape = SubResource("RectangleShape2D_s00jk")
