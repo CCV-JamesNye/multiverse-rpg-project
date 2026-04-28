@@ -261,12 +261,6 @@ texture = ExtResource("1_s36wj")
 61:5/0 = 0
 64:5/0 = 0
 65:5/0 = 0
-68:5/0 = 0
-69:5/0 = 0
-70:5/0 = 0
-71:5/0 = 0
-72:5/0 = 0
-73:5/0 = 0
 2:6/0 = 0
 2:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 0, -8, 0, 9.5, -8, 9.5)
 19:6/0 = 0
@@ -1106,6 +1100,12 @@ texture = ExtResource("1_s36wj")
 47:45/0 = 0
 48:45/0 = 0
 49:45/0 = 0
+68:5/0 = 0
+69:5/0 = 0
+70:5/0 = 0
+71:5/0 = 0
+72:5/0 = 0
+73:5/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_ey0cp"]
 physics_layer_0/collision_layer = 1

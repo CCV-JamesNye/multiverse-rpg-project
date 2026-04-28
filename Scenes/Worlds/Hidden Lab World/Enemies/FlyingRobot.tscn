@@ -590,8 +590,8 @@ size = Vector2(38, 15)
 size = Vector2(38, 15)
 
 [node name="FlyingRobot" type="CharacterBody2D" unique_id=1958446828]
-collision_layer = 4
-collision_mask = 11
+collision_layer = 32
+collision_mask = 2
 script = ExtResource("1_0iwkx")
 patrol_speed = 110.0
 
