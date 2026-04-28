@@ -1,5 +1,5 @@
 extends Node2D
-class_name HiddenLabDoor
+class_name DungeonDoor
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer

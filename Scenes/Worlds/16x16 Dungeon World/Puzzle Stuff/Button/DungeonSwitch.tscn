@@ -1,0 +1,93 @@
+[gd_scene format=3 uid="uid://brrjy2bctx1fc"]
+
+[ext_resource type="Script" uid="uid://b7cxcradeyjnc" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Button/Scripts/hidden_lab_button.gd" id="1_h6v8w"]
+[ext_resource type="Texture2D" uid="uid://ybhofqkj78c5" path="res://Tilesets/Worlds/16x16 Dungeon World/0x72_DungeonTilesetII_v1.7.png" id="2_h6v8w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_hxp63"]
+atlas = ExtResource("2_h6v8w")
+region = Rect2(96, 208, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nmht7"]
+atlas = ExtResource("2_h6v8w")
+region = Rect2(80, 208, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_uk0do"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_hxp63")
+}],
+"loop": true,
+"name": &"pressed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nmht7")
+}],
+"loop": true,
+"name": &"unpressed",
+"speed": 5.0
+}]
+
+[sub_resource type="Animation" id="Animation_njdr5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_mo5p1"]
+resource_name = "pressed"
+length = 0.03333667
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_uk0do"]
+_data = {
+&"RESET": SubResource("Animation_njdr5"),
+&"pressed": SubResource("Animation_mo5p1")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_njdr5"]
+size = Vector2(22, 8.5)
+
+[node name="DungeonSwitch" type="Node2D" unique_id=1469508311]
+script = ExtResource("1_h6v8w")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=456961432]
+position = Vector2(-0.99999994, -11.000001)
+scale = Vector2(1.75, 1.75)
+sprite_frames = SubResource("SpriteFrames_uk0do")
+animation = &"pressed"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=732393067]
+libraries/ = SubResource("AnimationLibrary_uk0do")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=800703980]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=642874532]
+position = Vector2(-1, -2.75)
+shape = SubResource("RectangleShape2D_njdr5")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

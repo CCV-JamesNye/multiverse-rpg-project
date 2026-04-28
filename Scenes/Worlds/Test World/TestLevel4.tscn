@@ -4,6 +4,8 @@
 [ext_resource type="PackedScene" uid="uid://cfeyflicd1fg1" path="res://Tilesets/Worlds/16x16 Dungeon World/16x16DungeonLayer1.tscn" id="2_t2ky2"]
 [ext_resource type="PackedScene" uid="uid://b4ab7gbhcqtyk" path="res://Tilesets/Worlds/16x16 Dungeon World/16x16DungeonLayer2.tscn" id="3_sracp"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="4_t2ky2"]
+[ext_resource type="PackedScene" uid="uid://dwre44a42hvlo" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Door/DungeonDoor.tscn" id="5_sracp"]
+[ext_resource type="PackedScene" uid="uid://brrjy2bctx1fc" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Button/DungeonSwitch.tscn" id="6_sdrj2"]
 
 [node name="TestLevel4" type="Node2D" unique_id=1390013160]
 script = ExtResource("1_mylik")
@@ -25,3 +27,9 @@ limit_right = 1152
 limit_bottom = 648
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="DungeonDoor" parent="." unique_id=995399566 instance=ExtResource("5_sracp")]
+position = Vector2(499, 75)
+
+[node name="DungeonSwitch" parent="." unique_id=1469508311 instance=ExtResource("6_sdrj2")]
+position = Vector2(534, 232)
