@@ -1,7 +1,7 @@
 [gd_scene format=3 uid="uid://c148aqi17mn3s"]
 
 [ext_resource type="Texture2D" uid="uid://be6ovrflifaj" path="res://Sprites/Worlds/Hidden Lab World/props and items x1.png" id="1_1wn0j"]
-[ext_resource type="Script" uid="uid://b7cxcradeyjnc" path="res://Scenes/Puzzle Stuff/Button/Scripts/hidden_lab_button.gd" id="1_njdr5"]
+[ext_resource type="Script" uid="uid://b7cxcradeyjnc" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Button/Scripts/hidden_lab_button.gd" id="1_njdr5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_njdr5"]
 atlas = ExtResource("1_1wn0j")

@@ -6,9 +6,9 @@
 [ext_resource type="Texture2D" uid="uid://be6ovrflifaj" path="res://Sprites/Worlds/Hidden Lab World/props and items x1.png" id="2_diqim"]
 [ext_resource type="PackedScene" uid="uid://r4frru3vx0d8" path="res://Scenes/Player/player.tscn" id="3_diqim"]
 [ext_resource type="PackedScene" uid="uid://8w6pjiujwtf1" path="res://Scenes/Worlds/Hidden Lab World/Enemies/FlyingRobot.tscn" id="5_1l8bt"]
-[ext_resource type="PackedScene" uid="uid://cmoqqmqjw6hcr" path="res://Scenes/Puzzle Stuff/Door/HiddenLabSmallDoor.tscn" id="6_dnr1c"]
-[ext_resource type="PackedScene" uid="uid://c148aqi17mn3s" path="res://Scenes/Puzzle Stuff/Button/HiddenLabButton.tscn" id="6_ravuj"]
-[ext_resource type="PackedScene" uid="uid://bg3kq8dbxy7n3" path="res://Scenes/Puzzle Stuff/Door/HiddenLabDoor.tscn" id="7_2i0su"]
+[ext_resource type="PackedScene" uid="uid://cmoqqmqjw6hcr" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Door/HiddenLabSmallDoor.tscn" id="6_dnr1c"]
+[ext_resource type="PackedScene" uid="uid://c148aqi17mn3s" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Button/HiddenLabButton.tscn" id="6_ravuj"]
+[ext_resource type="PackedScene" uid="uid://bg3kq8dbxy7n3" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Door/HiddenLabDoor.tscn" id="7_2i0su"]
 [ext_resource type="PackedScene" uid="uid://e2lwuftm1wap" path="res://Scenes/Worlds/Hidden Lab World/Enemies/BigRobot.tscn" id="7_52ii1"]
 [ext_resource type="PackedScene" uid="uid://b4d57yk8wcn4i" path="res://Scenes/General Use Scenes/SceneChangeArea.tscn" id="11_wotng"]
 

@@ -3,7 +3,7 @@ class_name HiddenLabDoor
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var animation_player: AnimationPlayer = $AnimationPlayer
-const hidden_lab_button = preload("res://Scenes/Puzzle Stuff/Button/HiddenLabButton.tscn")
+const hidden_lab_button = preload("res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Button/HiddenLabButton.tscn")
 
 @export var door_id : int
 enum state {CLOSED, OPEN}

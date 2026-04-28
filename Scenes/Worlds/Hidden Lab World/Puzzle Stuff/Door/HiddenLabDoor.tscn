@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://bg3kq8dbxy7n3"]
 
-[ext_resource type="Script" uid="uid://ca2uui4281bsl" path="res://Scenes/Puzzle Stuff/Door/Scripts/hidden_lab_door.gd" id="1_fn0lo"]
+[ext_resource type="Script" uid="uid://ca2uui4281bsl" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Door/Scripts/hidden_lab_door.gd" id="1_fn0lo"]
 [ext_resource type="Texture2D" uid="uid://be6ovrflifaj" path="res://Sprites/Worlds/Hidden Lab World/props and items x1.png" id="1_l6y6q"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l6y6q"]
