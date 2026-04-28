@@ -2386,7 +2386,7 @@ position_smoothing_speed = 8.0
 y_sort_enabled = true
 position = Vector2(1678.7501, 221.75003)
 connected_room = "res://Scenes/Worlds/Test World/TestLevel2.tscn"
-player_positon = Vector2(0, 561)
+player_positon = Vector2(100, 100)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChangeArea2" unique_id=2085083246]
 position = Vector2(-1117.7501, 414.24997)
