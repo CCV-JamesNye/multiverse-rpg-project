@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c148aqi17mn3s" path="res://Scenes/Puzzle Stuff/Button/HiddenLabButton.tscn" id="6_ravuj"]
 [ext_resource type="PackedScene" uid="uid://bg3kq8dbxy7n3" path="res://Scenes/Puzzle Stuff/Door/HiddenLabDoor.tscn" id="7_2i0su"]
 [ext_resource type="PackedScene" uid="uid://e2lwuftm1wap" path="res://Scenes/Worlds/Hidden Lab World/Enemies/BigRobot.tscn" id="7_52ii1"]
+[ext_resource type="PackedScene" uid="uid://b4d57yk8wcn4i" path="res://Scenes/General Use Scenes/SceneChangeArea.tscn" id="11_wotng"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j7nso"]
 texture = ExtResource("1_j56vf")
@@ -2322,6 +2323,9 @@ physics_layer_0/collision_mask = 6
 sources/1 = SubResource("TileSetAtlasSource_1dgnu")
 sources/2 = SubResource("TileSetAtlasSource_2i0su")
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xu1kr"]
+size = Vector2(74, 45)
+
 [node name="TestLevel3" type="Node2D" unique_id=1121952943]
 y_sort_enabled = true
 script = ExtResource("1_1dgnu")
@@ -2338,6 +2342,7 @@ tile_map_data = PackedByteArray("AAAAAAAAAwBCAAIAAAAAAAEAAwBCAAIAAAAAAAIAAwBCAAI
 tile_set = SubResource("TileSet_1l8bt")
 
 [node name="TileMapLayer5" type="TileMapLayer" parent="." unique_id=1123849076]
+y_sort_enabled = true
 scale = Vector2(2, 2)
 tile_map_data = PackedByteArray("AAAdAAwAAQBAAAIAAAAFAAUAAQBAAAIAAAAJAA0AAQBAAAQAAAAOABMAAQAKAAAAAAAPABMAAQALAAAAAAARABMAAgAAABwAAAATABMAAQAKAAAAAAAUABMAAQALAAAAAAATAAAAAQAKAAAAAAAUAAAAAQALAAAAAAAOAAAAAQAKAAAAAAAPAAAAAQALAAAAAAA=")
 tile_set = SubResource("TileSet_52ii1")
@@ -2358,13 +2363,11 @@ button_id = 1
 
 [node name="BigRobot" parent="." unique_id=1635130276 instance=ExtResource("7_52ii1")]
 position = Vector2(153, 436)
-patrol_speed = 80.0
 
 [node name="FlyingRobot" parent="." unique_id=1958446828 instance=ExtResource("5_1l8bt")]
 z_index = 1
 y_sort_enabled = true
 position = Vector2(863, 336)
-patrol_speed = 110.0
 
 [node name="Player" parent="." unique_id=642040466 instance=ExtResource("3_diqim")]
 position = Vector2(335, 251)
@@ -2378,3 +2381,13 @@ limit_right = 1152
 limit_bottom = 641
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
+
+[node name="SceneChangeArea2" parent="." unique_id=1727681937 instance=ExtResource("11_wotng")]
+y_sort_enabled = true
+position = Vector2(1678.7501, 221.75003)
+connected_room = "res://Scenes/Worlds/Test World/TestLevel2.tscn"
+player_positon = Vector2(0, 561)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChangeArea2" unique_id=2085083246]
+position = Vector2(-1117.7501, 414.24997)
+shape = SubResource("RectangleShape2D_xu1kr")

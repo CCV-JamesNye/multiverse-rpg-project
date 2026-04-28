@@ -3531,6 +3531,9 @@ size = Vector2(96, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_7xtqw"]
 size = Vector2(74, 45)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oytui"]
+size = Vector2(52, 18.5)
+
 [node name="TestLevel2" type="Node2D" unique_id=1839628372]
 y_sort_enabled = true
 script = ExtResource("1_oytui")
@@ -3587,3 +3590,9 @@ player_positon = Vector2(0, 561)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChangeArea2" unique_id=1780232920]
 position = Vector2(702.2499, -144.25003)
 shape = SubResource("RectangleShape2D_7xtqw")
+
+[node name="SceneChangeArea3" parent="." unique_id=523433898 instance=ExtResource("2_e7p4b")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SceneChangeArea3" unique_id=691124862]
+position = Vector2(2352, 11)
+shape = SubResource("RectangleShape2D_oytui")
