@@ -40,15 +40,15 @@ position = Vector2(499, 75)
 position = Vector2(534, 232)
 
 [node name="RedBlueSpikes" parent="." unique_id=789351489 instance=ExtResource("7_0nt3p")]
-position = Vector2(678, 204)
+position = Vector2(400, 240)
 
 [node name="RedBlueSpikes2" parent="." unique_id=1570658036 instance=ExtResource("7_0nt3p")]
-position = Vector2(732, 205)
+position = Vector2(656, 240)
 color = 1
 
 [node name="RedBlueButton" parent="." unique_id=1158490795 instance=ExtResource("8_37y8u")]
-position = Vector2(678, 254)
+position = Vector2(400, 336)
 
-[node name="RedBlueButton2" parent="." unique_id=206094876 instance=ExtResource("8_37y8u")]
-position = Vector2(730, 254)
+[node name="RedBlueButton2" parent="." unique_id=442303114 instance=ExtResource("8_37y8u")]
+position = Vector2(656, 336)
 color = 1

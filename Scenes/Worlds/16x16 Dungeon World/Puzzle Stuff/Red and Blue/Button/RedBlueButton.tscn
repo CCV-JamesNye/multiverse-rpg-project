@@ -283,6 +283,7 @@ y_sort_enabled = true
 script = ExtResource("1_046g2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=456961432]
+y_sort_enabled = true
 scale = Vector2(1.75, 1.75)
 sprite_frames = SubResource("SpriteFrames_uk0do")
 animation = &"red_unpressed"

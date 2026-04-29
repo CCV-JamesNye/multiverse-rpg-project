@@ -4,15 +4,8 @@ extends Node
 signal any_button_pressed
 var button_id : int
 signal red_blue_button_pressed
-signal red_blue_pressed_2
 var red_button_pressed : bool
 var blue_button_pressed : bool
-
-func _process(delta: float) -> void:
-	red_blue_button_pressed.connect(send_button_press)
-
-func send_button_press():
-	red_blue_pressed_2.emit()
 
 func plr_die():
 	SceneTransition.save_scene()
