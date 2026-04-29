@@ -1,43 +1,23 @@
 [gd_scene format=3 uid="uid://bmce14j1h606"]
 
-[ext_resource type="Script" uid="uid://bjg3e0dc8mgcs" path="res://Scenes/Worlds/Hidden Lab World/Enemies/Scripts/big_robot.gd" id="1_58n8m"]
+[ext_resource type="Script" uid="uid://vb354eyo5vhd" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/Scripts/demon_creacher.gd" id="1_w313y"]
 [ext_resource type="Texture2D" uid="uid://caxm43ninuy0j" path="res://Sprites/Worlds/Hidden Lab World/Enemies/enemies x1.png" id="2_iarpo"]
 [ext_resource type="Texture2D" uid="uid://2f6hqeeh3ati" path="res://Sprites/Worlds/Homeworld/Slime/slime.png" id="3_uktv3"]
 [ext_resource type="AudioStream" uid="uid://dtrhxaikhipyx" path="res://Audio/Sounds/hurt.wav" id="4_n2ff5"]
+[ext_resource type="Texture2D" uid="uid://dynsnx300gu8k" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Idle/chort_idle_anim_f0.png" id="4_wpu6f"]
+[ext_resource type="Texture2D" uid="uid://onexru23gx0t" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Idle/chort_idle_anim_f1.png" id="5_5007o"]
 [ext_resource type="Script" uid="uid://bpamg3oitx4dk" path="res://Scenes/General Use Scenes/General Use Scripts/hurtbox.gd" id="5_v341n"]
+[ext_resource type="Texture2D" uid="uid://b3cp5yklrx7yr" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Idle/chort_idle_anim_f2.png" id="6_3itdj"]
 [ext_resource type="Script" uid="uid://ese4gqc8bwyd" path="res://Scenes/General Use Scenes/General Use Scripts/hitbox.gd" id="6_jrmou"]
+[ext_resource type="Texture2D" uid="uid://ltejse2jhyel" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Idle/chort_idle_anim_f3.png" id="7_k42qu"]
+[ext_resource type="Texture2D" uid="uid://cwwkbptrj0qqv" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Run/chort_run_anim_f0.png" id="8_w313y"]
+[ext_resource type="Texture2D" uid="uid://baabubh6ctx8x" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Run/chort_run_anim_f1.png" id="9_lvvit"]
+[ext_resource type="Texture2D" uid="uid://dk811fj6muqt" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Run/chort_run_anim_f2.png" id="10_n2ppe"]
+[ext_resource type="Texture2D" uid="uid://8sjlkbipxhiu" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Run/chort_run_anim_f3.png" id="11_xx4xr"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ntwch"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(0, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jkmti"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(32, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_823wg"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(64, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8dst1"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(96, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2pb83"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(128, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3xx88"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(160, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jwpal"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(192, 320, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_kprrv"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(224, 320, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xxdng"]
+atlas = ExtResource("9_lvvit")
+region = Rect2(0, 0, 16, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_51jk3"]
 atlas = ExtResource("3_uktv3")
@@ -63,21 +43,25 @@ region = Rect2(64, 0, 32, 32)
 atlas = ExtResource("3_uktv3")
 region = Rect2(96, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dse4u"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(160, 192, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_w313y"]
+atlas = ExtResource("4_wpu6f")
+region = Rect2(0, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u6und"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(192, 192, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvvit"]
+atlas = ExtResource("5_5007o")
+region = Rect2(0, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_4pphh"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(224, 192, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_n2ppe"]
+atlas = ExtResource("6_3itdj")
+region = Rect2(0, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_hkiwo"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(256, 192, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_xx4xr"]
+atlas = ExtResource("4_wpu6f")
+region = Rect2(0, 0, 16, 23)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wd3wp"]
+atlas = ExtResource("7_k42qu")
+region = Rect2(0, 0, 16, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_plmah"]
 atlas = ExtResource("3_uktv3")
@@ -115,21 +99,21 @@ region = Rect2(96, 192, 32, 32)
 atlas = ExtResource("3_uktv3")
 region = Rect2(128, 192, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_84fei"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(0, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_0hh14"]
+atlas = ExtResource("8_w313y")
+region = Rect2(0, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1nyoo"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(32, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_wcd7v"]
+atlas = ExtResource("9_lvvit")
+region = Rect2(0, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_dd822"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(64, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_rm1ua"]
+atlas = ExtResource("10_n2ppe")
+region = Rect2(0, 0, 16, 23)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_tss76"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(96, 256, 32, 32)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tb4p"]
+atlas = ExtResource("11_xx4xr")
+region = Rect2(0, 0, 16, 23)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l21wg"]
 atlas = ExtResource("3_uktv3")
@@ -227,28 +211,7 @@ region = Rect2(160, 160, 32, 32)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_ntwch")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jkmti")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_823wg")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8dst1")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_2pb83")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_3xx88")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_jwpal")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_kprrv")
+"texture": SubResource("AtlasTexture_xxdng")
 }],
 "loop": false,
 "name": &"die",
@@ -284,20 +247,23 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dse4u")
+"texture": SubResource("AtlasTexture_w313y")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u6und")
+"texture": SubResource("AtlasTexture_lvvit")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_4pphh")
+"texture": SubResource("AtlasTexture_n2ppe")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_hkiwo")
+"texture": SubResource("AtlasTexture_xx4xr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wd3wp")
 }],
 "loop": true,
 "name": &"idle_side",
-"speed": 6.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -338,20 +304,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_84fei")
+"texture": SubResource("AtlasTexture_0hh14")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1nyoo")
+"texture": SubResource("AtlasTexture_wcd7v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dd822")
+"texture": SubResource("AtlasTexture_rm1ua")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tss76")
+"texture": SubResource("AtlasTexture_4tb4p")
 }],
 "loop": true,
 "name": &"run_side",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -530,10 +496,22 @@ tracks/2/keys = {
 "update": 1,
 "values": [false]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
 
 [sub_resource type="Animation" id="Animation_5iw1d"]
 resource_name = "die"
-length = 0.03333667
+length = 0.33333668
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -570,6 +548,18 @@ tracks/2/keys = {
 "update": 1,
 "values": [true]
 }
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.33333334),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(0, 0, 0, 1)]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_jkmti"]
 _data = {
@@ -577,27 +567,27 @@ _data = {
 &"die": SubResource("Animation_5iw1d")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kprrv"]
-size = Vector2(38, 15)
-
 [sub_resource type="CircleShape2D" id="CircleShape2D_dse4u"]
 radius = 99.78602
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kprrv"]
+size = Vector2(26, 15)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6und"]
-size = Vector2(38, 15)
+size = Vector2(26, 15)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pphh"]
-size = Vector2(38, 15)
+size = Vector2(26, 15)
 
-[node name="BigRobot" type="CharacterBody2D" unique_id=1635130276]
-script = ExtResource("1_58n8m")
-patrol_speed = 80.0
+[node name="DemonCreacher" type="CharacterBody2D" unique_id=1635130276]
+script = ExtResource("1_w313y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2053618990]
 position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_3xx88")
-animation = &"idle_side"
+animation = &"die"
+frame_progress = 1.0
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1460812900]
 libraries/ = SubResource("AnimationLibrary_jwpal")
@@ -611,10 +601,6 @@ volume_db = 7.0
 pitch_scale = 1.5
 bus = &"General SFX"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1153350716]
-position = Vector2(0, -7.5)
-shape = SubResource("RectangleShape2D_kprrv")
-
 [node name="PlayerDetector" type="Area2D" parent="." unique_id=446097111]
 collision_layer = 4
 collision_mask = 2
@@ -623,13 +609,17 @@ collision_mask = 2
 position = Vector2(0, -5.5)
 shape = SubResource("CircleShape2D_dse4u")
 
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1153350716]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_kprrv")
+
 [node name="HurtBox" type="Area2D" parent="." unique_id=2117268084]
 collision_layer = 4
 collision_mask = 2
 script = ExtResource("5_v341n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=456252786]
-position = Vector2(0, -7.5)
+position = Vector2(0, 0.5)
 shape = SubResource("RectangleShape2D_u6und")
 debug_color = Color(0, 0.5058824, 0.25490198, 0.41960785)
 
@@ -640,7 +630,7 @@ monitoring = false
 script = ExtResource("6_jrmou")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1368446619]
-position = Vector2(0, -7)
+position = Vector2(0, 1)
 shape = SubResource("RectangleShape2D_4pphh")
 debug_color = Color(0.90102446, 0, 0.16025886, 0.41960785)
 
@@ -653,4 +643,5 @@ wait_time = 1.5
 one_shot = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[connection signal="animation_finished" from="AnimationPlayer2" to="." method="_on_animation_player_2_animation_finished"]
 [connection signal="body_entered" from="HitBox" to="." method="_on_hit_box_body_entered"]

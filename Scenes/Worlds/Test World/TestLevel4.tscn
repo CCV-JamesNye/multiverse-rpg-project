@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://brrjy2bctx1fc" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Switch/DungeonSwitch.tscn" id="6_sdrj2"]
 [ext_resource type="PackedScene" uid="uid://kbqa0mqh6dt2" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Spikes/RedBlueSpikes.tscn" id="7_0nt3p"]
 [ext_resource type="PackedScene" uid="uid://c66e6quq1dfv6" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Button/RedBlueButton.tscn" id="8_37y8u"]
+[ext_resource type="PackedScene" uid="uid://bmce14j1h606" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/DemonCreacher.tscn" id="9_1vs7r"]
 
 [node name="TestLevel4" type="Node2D" unique_id=1390013160]
 script = ExtResource("1_mylik")
@@ -52,3 +53,6 @@ position = Vector2(400, 336)
 [node name="RedBlueButton2" parent="." unique_id=442303114 instance=ExtResource("8_37y8u")]
 position = Vector2(656, 336)
 color = 1
+
+[node name="DemonCreacher" parent="." unique_id=1635130276 instance=ExtResource("9_1vs7r")]
+position = Vector2(791, 166)

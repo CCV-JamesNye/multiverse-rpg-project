@@ -1,7 +1,7 @@
 extends CharacterBody2D
-class_name BigRobot
+class_name DemonCreacher
 
-@onready var big_robot: BigRobot = $"."
+@onready var demon_creacher: DemonCreacher = $"."
 @onready var collision_shape_2d: CollisionShape2D = $CollisionShape2D
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_detector: Area2D = $PlayerDetector
@@ -20,10 +20,10 @@ enum state {IDLE, PATROL, CHASE, START, DIE}
 var current_state : state = state.IDLE
 var player_target = Player
 @onready var start_position
-var health : int = 4
+var health : int = 3
 var can_chase : bool = true
 signal health_update (int)
-@export var big_robot_instance = big_robot
+@export var big_robot_instance = demon_creacher
 var is_dying : bool = false
 var knockbackVelocity : Vector2 = Vector2.ZERO
 
@@ -166,9 +166,12 @@ func handle_knockback() -> void:
 	pass
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	if is_dying == true:
-		big_robot.queue_free()
+	pass
 
 func _on_hit_box_body_entered(body: Node2D) -> void:
 	if body is HurtBox:
 		knockback()
+
+func _on_animation_player_2_animation_finished(anim_name: StringName) -> void:
+	if is_dying == true:
+		demon_creacher.queue_free()
