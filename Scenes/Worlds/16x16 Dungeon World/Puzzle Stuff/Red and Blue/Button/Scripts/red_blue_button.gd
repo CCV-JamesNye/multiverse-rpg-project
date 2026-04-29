@@ -15,7 +15,10 @@ func _ready() -> void:
 	pass
 
 func _process(_delta: float) -> void:
-	GameManager.red_blue_pressed_2.connect(color_checker)
+	if not GameManager.red_blue_button_pressed.is_connected(color_checker):
+		GameManager.red_blue_pressed_2.connect(color_checker)
+	else:
+		pass
 
 func _physics_process(_delta: float) -> void:
 	match current_state:
@@ -49,7 +52,8 @@ func color_checker():
 			animation_player.play("blue_unpressed")
 
 func emit_the_signal():
-	GameManager.red_blue_button_pressed.emit()
+	if not GameManager.red_blue_button_pressed.is_connected(color_checker):
+		GameManager.red_blue_button_pressed.emit()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if is_pressed == false:
