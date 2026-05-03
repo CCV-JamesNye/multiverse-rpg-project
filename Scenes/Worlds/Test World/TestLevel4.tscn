@@ -8,7 +8,9 @@
 [ext_resource type="PackedScene" uid="uid://brrjy2bctx1fc" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Switch/DungeonSwitch.tscn" id="6_sdrj2"]
 [ext_resource type="PackedScene" uid="uid://kbqa0mqh6dt2" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Spikes/RedBlueSpikes.tscn" id="7_0nt3p"]
 [ext_resource type="PackedScene" uid="uid://c66e6quq1dfv6" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Button/RedBlueButton.tscn" id="8_37y8u"]
-[ext_resource type="PackedScene" uid="uid://bmce14j1h606" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/DemonCreacher.tscn" id="9_1vs7r"]
+[ext_resource type="PackedScene" uid="uid://bmce14j1h606" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/DemonCreacher.tscn" id="9_1vs7r"]
+[ext_resource type="PackedScene" uid="uid://blm35oqs13irk" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/LittleCreacher.tscn" id="10_usa7k"]
+[ext_resource type="PackedScene" uid="uid://dd6pmmsd6w2ca" path="res://Scenes/General Use Scenes/WanderMarker.tscn" id="11_o5wrk"]
 
 [node name="TestLevel4" type="Node2D" unique_id=1390013160]
 script = ExtResource("1_mylik")
@@ -56,3 +58,21 @@ color = 1
 
 [node name="DemonCreacher" parent="." unique_id=1635130276 instance=ExtResource("9_1vs7r")]
 position = Vector2(791, 166)
+patrol_speed = 90.0
+
+[node name="LittleCreacher" parent="." unique_id=286966731 instance=ExtResource("10_usa7k")]
+position = Vector2(532, 393)
+patrol_speed = 110.0
+max_wander_points_plus_one = 4
+
+[node name="WanderMarker" parent="." unique_id=1856634604 instance=ExtResource("11_o5wrk")]
+position = Vector2(296, 374)
+wander_id = 1
+
+[node name="WanderMarker2" parent="." unique_id=1636643549 instance=ExtResource("11_o5wrk")]
+position = Vector2(398, 520)
+wander_id = 2
+
+[node name="WanderMarker3" parent="." unique_id=1539888701 instance=ExtResource("11_o5wrk")]
+position = Vector2(728, 325)
+wander_id = 3

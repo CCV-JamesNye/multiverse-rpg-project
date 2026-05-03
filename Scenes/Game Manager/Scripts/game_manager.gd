@@ -6,6 +6,11 @@ var button_id : int
 signal red_blue_button_pressed
 var red_button_pressed : bool
 var blue_button_pressed : bool
+var wander_id : int
+signal wander_id_sent
+var wander_marker_position : Vector2
+signal wander_id_received
+var wander_enemy_type : String
 
 func plr_die():
 	SceneTransition.save_scene()

@@ -1,7 +1,6 @@
 [gd_scene format=3 uid="uid://bmce14j1h606"]
 
 [ext_resource type="Script" uid="uid://vb354eyo5vhd" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/Scripts/demon_creacher.gd" id="1_w313y"]
-[ext_resource type="Texture2D" uid="uid://caxm43ninuy0j" path="res://Sprites/Worlds/Hidden Lab World/Enemies/enemies x1.png" id="2_iarpo"]
 [ext_resource type="Texture2D" uid="uid://2f6hqeeh3ati" path="res://Sprites/Worlds/Homeworld/Slime/slime.png" id="3_uktv3"]
 [ext_resource type="AudioStream" uid="uid://dtrhxaikhipyx" path="res://Audio/Sounds/hurt.wav" id="4_n2ff5"]
 [ext_resource type="Texture2D" uid="uid://dynsnx300gu8k" path="res://Sprites/Worlds/16x16 Dungeon World/Enemies/Demon Creacher/Idle/chort_idle_anim_f0.png" id="4_wpu6f"]
@@ -162,22 +161,6 @@ region = Rect2(128, 96, 32, 32)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bkwt2"]
 atlas = ExtResource("3_uktv3")
 region = Rect2(160, 96, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_yapi3"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(0, 256, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_tc8gv"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(32, 256, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_dn0rn"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(64, 256, 32, 32)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_asnl4"]
-atlas = ExtResource("2_iarpo")
-region = Rect2(96, 256, 32, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31dxv"]
 atlas = ExtResource("3_uktv3")
@@ -367,20 +350,20 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_yapi3")
+"texture": SubResource("AtlasTexture_0hh14")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_tc8gv")
+"texture": SubResource("AtlasTexture_wcd7v")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_dn0rn")
+"texture": SubResource("AtlasTexture_rm1ua")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_asnl4")
+"texture": SubResource("AtlasTexture_4tb4p")
 }],
 "loop": true,
 "name": &"walk_side",
-"speed": 3.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -580,14 +563,16 @@ size = Vector2(26, 15)
 size = Vector2(26, 15)
 
 [node name="DemonCreacher" type="CharacterBody2D" unique_id=1635130276]
+collision_layer = 4
+collision_mask = 3
 script = ExtResource("1_w313y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2053618990]
 position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_3xx88")
-animation = &"die"
-frame_progress = 1.0
+animation = &"walk_side"
+frame_progress = 0.1819109
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1460812900]
 libraries/ = SubResource("AnimationLibrary_jwpal")

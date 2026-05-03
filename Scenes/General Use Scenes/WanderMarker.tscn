@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://dd6pmmsd6w2ca"]
+
+[ext_resource type="Script" uid="uid://bsk37y6601xok" path="res://Scenes/General Use Scenes/General Use Scripts/wander_marker.gd" id="1_n3xiy"]
+
+[sub_resource type="SeparationRayShape2D" id="SeparationRayShape2D_60hom"]
+
+[node name="WanderMarker" type="Node2D" unique_id=941541919]
+script = ExtResource("1_n3xiy")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1721120818]
+collision_layer = 0
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=1157641134]
+position = Vector2(0, -39.99997)
+scale = Vector2(2, 2)
+shape = SubResource("SeparationRayShape2D_60hom")
+debug_color = Color(1, 1, 1, 0.41960785)
