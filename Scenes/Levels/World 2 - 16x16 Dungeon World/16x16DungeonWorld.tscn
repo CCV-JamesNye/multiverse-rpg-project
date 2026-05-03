@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://b5lvuv8poe556"]
+
+[ext_resource type="Script" uid="uid://c31tlubwwnm5y" path="res://Scenes/Levels/World 2 - 16x16 Dungeon World/Scripts/16x16_dungeon_world.gd" id="1_wenjc"]
+
+[node name="16x16DungeonWorld" type="Node2D" unique_id=902656779]
+script = ExtResource("1_wenjc")
