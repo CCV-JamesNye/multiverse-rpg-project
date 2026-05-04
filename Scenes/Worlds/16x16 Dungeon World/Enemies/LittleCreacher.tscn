@@ -553,18 +553,19 @@ _data = {
 }
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_dse4u"]
-radius = 99.78602
+radius = 70.21574
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kprrv"]
-size = Vector2(26, 15)
+size = Vector2(24, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_u6und"]
-size = Vector2(26, 15)
+size = Vector2(24, 11)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4pphh"]
-size = Vector2(26, 15)
+size = Vector2(24, 11)
 
 [node name="LittleCreacher" type="CharacterBody2D" unique_id=1635130276]
+y_sort_enabled = true
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_ljjj7")
@@ -574,8 +575,7 @@ min_wander_points = 1
 position = Vector2(-4.7683716e-07, -22)
 scale = Vector2(2.6328125, 2.6328125)
 sprite_frames = SubResource("SpriteFrames_3xx88")
-animation = &"walk_side"
-frame_progress = 0.1422462
+animation = &"idle_side"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1460812900]
 libraries/ = SubResource("AnimationLibrary_jwpal")
@@ -594,11 +594,12 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetector" unique_id=1363821984]
+visible = false
 position = Vector2(0, -5.5)
 shape = SubResource("CircleShape2D_dse4u")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1153350716]
-position = Vector2(0, 0.5)
+position = Vector2(1, -6.5)
 shape = SubResource("RectangleShape2D_kprrv")
 
 [node name="HurtBox" type="Area2D" parent="." unique_id=2117268084]
@@ -607,7 +608,7 @@ collision_mask = 2
 script = ExtResource("13_upraw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" unique_id=456252786]
-position = Vector2(0, 0.5)
+position = Vector2(1, -6.5)
 shape = SubResource("RectangleShape2D_u6und")
 debug_color = Color(0, 0.5058824, 0.25490198, 0.41960785)
 
@@ -618,7 +619,7 @@ monitoring = false
 script = ExtResource("14_ai883")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=1368446619]
-position = Vector2(0, 1)
+position = Vector2(1, -6.5)
 shape = SubResource("RectangleShape2D_4pphh")
 debug_color = Color(0.90102446, 0, 0.16025886, 0.41960785)
 
