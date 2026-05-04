@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player_detector: Area2D = $PlayerDetector
+@export var next_world : String
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -11,4 +12,4 @@ func _ready() -> void:
 func check_for_player(body : Node2D) -> void:
 	if body is Player:
 		await SceneTransition.fade_to_black()
-		get_tree().change_scene_to_file("res://Scenes/UI/WinScreen.tscn")
+		get_tree().change_scene_to_file(next_world)

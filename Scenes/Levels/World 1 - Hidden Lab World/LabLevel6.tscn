@@ -33,6 +33,7 @@ tile_map_data = PackedByteArray("AAAvAP//AABEAAUAAAAwAP//AABFAAUAAAAxAP//AABGAAU
 [node name="WorldlessTV" parent="." unique_id=733644053 instance=ExtResource("4_w84c5")]
 y_sort_enabled = true
 position = Vector2(1856, -356)
+next_world = "res://Scenes/Levels/World 2 - 16x16 Dungeon World/16x16DungeonWorld.tscn"
 
 [node name="FlyingRobot" parent="." unique_id=1958446828 instance=ExtResource("4_83dog")]
 position = Vector2(1724, 24)
