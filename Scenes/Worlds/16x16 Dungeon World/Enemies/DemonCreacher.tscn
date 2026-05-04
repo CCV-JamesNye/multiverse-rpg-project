@@ -566,6 +566,7 @@ size = Vector2(26, 15)
 collision_layer = 4
 collision_mask = 3
 script = ExtResource("1_w313y")
+patrol_speed = 90.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=2053618990]
 position = Vector2(-4.7683716e-07, -22)

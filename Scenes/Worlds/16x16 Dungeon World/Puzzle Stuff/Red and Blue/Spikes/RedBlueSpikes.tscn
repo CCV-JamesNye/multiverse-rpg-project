@@ -2,6 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bg5ufpwum84aw" path="res://Tilesets/Worlds/16x16 Dungeon World/atlas_floor-16x16.png" id="1_2mi4i"]
 [ext_resource type="Script" uid="uid://cxq8x73f6ib5v" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Spikes/Scripts/red_blue_spikes.gd" id="1_oyfle"]
+[ext_resource type="Script" uid="uid://ese4gqc8bwyd" path="res://Scenes/General Use Scenes/General Use Scripts/hitbox.gd" id="3_qluk5"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oyfle"]
 atlas = ExtResource("1_2mi4i")
@@ -123,6 +124,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(1, 1, 1, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_dvt8d"]
 resource_name = "default_blue"
@@ -175,6 +188,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0.3647059, 0.6117647, 0.80784315, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_qluk5"]
 resource_name = "default_red"
@@ -226,6 +251,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0.85490197, 0.30588236, 0.21960784, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
 }
 
 [sub_resource type="Animation" id="Animation_cgclr"]
@@ -280,6 +317,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0.3647059, 0.6117647, 0.80784315, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.14285715),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_pivro"]
 resource_name = "off_red"
@@ -332,6 +381,18 @@ tracks/3/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0.85490197, 0.30588236, 0.21960784, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0.14285715),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_uvrt2"]
@@ -386,6 +447,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0.3647059, 0.6117647, 0.80784315, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="Animation" id="Animation_bpjn2"]
 resource_name = "on_red"
@@ -439,6 +512,18 @@ tracks/3/keys = {
 "update": 0,
 "values": [Color(0.85490197, 0.30588236, 0.21960784, 1)]
 }
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("HitBox/CollisionShape2D:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_bpjn2"]
 _data = {
@@ -450,6 +535,9 @@ _data = {
 &"on_blue": SubResource("Animation_uvrt2"),
 &"on_red": SubResource("Animation_bpjn2")
 }
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bpjn2"]
+size = Vector2(26, 26)
 
 [node name="RedBlueSpikes" type="StaticBody2D" unique_id=789351489]
 z_index = -1
@@ -466,3 +554,14 @@ shape = SubResource("RectangleShape2D_2mi4i")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=167430810]
 libraries/ = SubResource("AnimationLibrary_bpjn2")
+
+[node name="HitBox" type="Area2D" parent="." unique_id=1264364745]
+collision_layer = 4
+collision_mask = 6
+monitoring = false
+script = ExtResource("3_qluk5")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBox" unique_id=56826058]
+shape = SubResource("RectangleShape2D_bpjn2")
+disabled = true
+debug_color = Color(0.90102446, 0, 0.16025886, 0.41960785)

@@ -49,7 +49,7 @@ func color_checker():
 			is_pressed = false
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	if body is Player || LittleCreacher:
+	if body is Player || MovingDemonCreacher:
 		if color == button_color.RED:
 			GameManager.red_button_pressed = true
 			GameManager.blue_button_pressed = false
