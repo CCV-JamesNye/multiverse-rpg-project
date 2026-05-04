@@ -4,6 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cfeyflicd1fg1" path="res://Tilesets/Worlds/16x16 Dungeon World/16x16DungeonLayer1.tscn" id="2_6d14g"]
 [ext_resource type="PackedScene" uid="uid://b4ab7gbhcqtyk" path="res://Tilesets/Worlds/16x16 Dungeon World/16x16DungeonLayer2.tscn" id="3_juo1r"]
 [ext_resource type="PackedScene" uid="uid://kbqa0mqh6dt2" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Spikes/RedBlueSpikes.tscn" id="4_xf1no"]
+[ext_resource type="PackedScene" uid="uid://c66e6quq1dfv6" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Button/RedBlueButton.tscn" id="5_cay6k"]
 [ext_resource type="PackedScene" uid="uid://bmce14j1h606" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/DemonCreacher.tscn" id="6_cay6k"]
 
 [node name="16x16DungeonWorld" type="Node2D" unique_id=902656779]
@@ -41,6 +42,13 @@ color = 1
 
 [node name="RedBlueSpikes6" parent="." unique_id=1837082307 instance=ExtResource("4_xf1no")]
 position = Vector2(368, 688)
+color = 1
+
+[node name="RedBlueButton" parent="." unique_id=1469508311 instance=ExtResource("5_cay6k")]
+position = Vector2(648, 560)
+
+[node name="RedBlueButton2" parent="." unique_id=1914303040 instance=ExtResource("5_cay6k")]
+position = Vector2(648, 624)
 color = 1
 
 [node name="DemonCreacher" parent="." unique_id=1635130276 instance=ExtResource("6_cay6k")]

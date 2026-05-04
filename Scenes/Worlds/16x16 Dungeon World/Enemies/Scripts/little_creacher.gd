@@ -33,8 +33,6 @@ var rng = RandomNumberGenerator.new()
 @warning_ignore("narrowing_conversion")
 var random_wander_id : int
 var debug_wander_id : int
-var is_chase : bool = false
-@export var wander_wait_time : float = 1.4
 
 func _ready() -> void:
 	player_target = get_tree().get_first_node_in_group("player")
@@ -80,9 +78,8 @@ func handle_idle() -> void:
 	velocity=Vector2.ZERO
 	await get_tree().create_timer(0.01).timeout
 	start_wander()
-	await get_tree().create_timer(wander_wait_time).timeout
-	if is_chase == false:
-		current_state = state.WANDER
+	await get_tree().create_timer(1.4).timeout
+	current_state = state.WANDER
 
 func handle_patrol() -> void:
 	if facing == "down":
@@ -105,7 +102,6 @@ func handle_chase() -> void:
 	elif direction.x > 0:
 		facing = "right"
 	
-	is_chase = true
 	idle_timer.stop()
 	if facing == "down":
 		animated_sprite_2d.play("run_down")
@@ -168,7 +164,6 @@ func player_left(body : Node2D) -> void:
 
 func end_chase() -> void:
 	current_state = state.IDLE
-	is_chase = false
 	idle_timer.start()
 
 func return_to_wander() -> void:
