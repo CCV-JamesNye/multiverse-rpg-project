@@ -394,9 +394,11 @@ texture = ExtResource("1_8aaia")
 28:15/0 = 0
 29:15/0 = 0
 1:16/0 = 0
+1:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 2:16/0 = 0
 3:16/0 = 0
 4:16/0 = 0
+4:16/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -4, 8, -4, 8, 8, -8, 8)
 5:16/0 = 0
 6:16/0 = 0
 8:16/0 = 0
@@ -886,10 +888,14 @@ texture = ExtResource("4_q2jn3")
 11:3/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_cnqvh"]
+physics_layer_0/collision_layer = 1
+physics_layer_0/collision_mask = 6
 sources/0 = SubResource("TileSetAtlasSource_o8l5i")
 sources/1 = SubResource("TileSetAtlasSource_ui0kt")
 sources/2 = SubResource("TileSetAtlasSource_4trqe")
 sources/3 = SubResource("TileSetAtlasSource_m2wln")
 
 [node name="16x16DungeonLayer2" type="TileMapLayer" unique_id=244245740]
+y_sort_enabled = true
+scale = Vector2(2, 2)
 tile_set = SubResource("TileSet_cnqvh")

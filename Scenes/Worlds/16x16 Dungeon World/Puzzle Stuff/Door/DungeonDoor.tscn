@@ -148,14 +148,14 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l6y6q"]
-size = Vector2(57, 30)
+size = Vector2(64, 30)
 
 [node name="DungeonDoor" type="Node2D" unique_id=995399566]
 script = ExtResource("1_44o0s")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1251097620]
-position = Vector2(-0.49999517, -28.75)
-scale = Vector2(1.796875, 1.796875)
+position = Vector2(5.9604645e-07, -31.999998)
+scale = Vector2(2, 1.9999999)
 sprite_frames = SubResource("SpriteFrames_x0wjw")
 animation = &"closed"
 
@@ -166,7 +166,7 @@ libraries/ = SubResource("AnimationLibrary_627d2")
 collision_mask = 6
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="UnopenedCollision" unique_id=1939164759]
-position = Vector2(-0.5, -15)
+position = Vector2(0, -15)
 shape = SubResource("RectangleShape2D_l6y6q")
 
 [connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]

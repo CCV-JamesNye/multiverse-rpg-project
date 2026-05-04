@@ -48,12 +48,12 @@ func on():
 
 func color_checker():
 	if color == spike_color.RED:
-		if GameManager.red_button_pressed == true:
+		if GameManager.red_button_pressed == true && current_state != state.DEFAULT:
 			current_state = state.ON
 		elif GameManager.blue_button_pressed == true:
 			current_state = state.OFF
 	elif color == spike_color.BLUE:
-		if GameManager.blue_button_pressed == true:
+		if GameManager.blue_button_pressed == true && current_state != state.DEFAULT:
 			current_state = state.ON
 		elif GameManager.red_button_pressed == true:
 			current_state = state.OFF
