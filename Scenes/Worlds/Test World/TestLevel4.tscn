@@ -11,11 +11,13 @@
 [ext_resource type="PackedScene" uid="uid://bmce14j1h606" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/DemonCreacher.tscn" id="9_1vs7r"]
 [ext_resource type="PackedScene" uid="uid://blm35oqs13irk" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/LittleCreacher.tscn" id="10_usa7k"]
 [ext_resource type="PackedScene" uid="uid://dd6pmmsd6w2ca" path="res://Scenes/General Use Scenes/WanderMarker.tscn" id="11_o5wrk"]
+[ext_resource type="PackedScene" uid="uid://dk3qwx6xirsau" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/MovingDemonCreacher.tscn" id="12_mcngo"]
 
 [node name="TestLevel4" type="Node2D" unique_id=1390013160]
 script = ExtResource("1_mylik")
 
 [node name="16x16DungeonLayer1" parent="." unique_id=918604011 instance=ExtResource("2_t2ky2")]
+tile_map_data = PackedByteArray("AAAdAAcAAgAAAAEAAAAOAAcAAgAAAAEAAAA=")
 
 [node name="16x16DungeonLayer2" parent="." unique_id=1354589365 instance=ExtResource("2_t2ky2")]
 z_index = -1
@@ -43,10 +45,10 @@ position = Vector2(499, 75)
 position = Vector2(534, 232)
 
 [node name="RedBlueSpikes" parent="." unique_id=789351489 instance=ExtResource("7_0nt3p")]
-position = Vector2(400, 240)
+position = Vector2(401, 272)
 
 [node name="RedBlueSpikes2" parent="." unique_id=1570658036 instance=ExtResource("7_0nt3p")]
-position = Vector2(656, 240)
+position = Vector2(656, 270)
 color = 1
 
 [node name="RedBlueButton" parent="." unique_id=1158490795 instance=ExtResource("8_37y8u")]
@@ -76,3 +78,7 @@ wander_id = 2
 [node name="WanderMarker3" parent="." unique_id=1539888701 instance=ExtResource("11_o5wrk")]
 position = Vector2(728, 325)
 wander_id = 3
+
+[node name="MovingDemonCreacher" parent="." unique_id=755633044 instance=ExtResource("12_mcngo")]
+position = Vector2(491, 243)
+patrol_speed = 100.0
