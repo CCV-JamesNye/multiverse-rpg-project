@@ -1,0 +1,63 @@
+[gd_scene format=4 uid="uid://dl238hjps8nvc"]
+
+[ext_resource type="Script" uid="uid://c31tlubwwnm5y" path="res://Scenes/Levels/World 2 - 16x16 Dungeon World/Scripts/16x16_dungeon_world.gd" id="1_gkdrm"]
+[ext_resource type="PackedScene" uid="uid://cfeyflicd1fg1" path="res://Tilesets/Worlds/16x16 Dungeon World/16x16DungeonLayer1.tscn" id="2_d3tv1"]
+[ext_resource type="PackedScene" uid="uid://b4ab7gbhcqtyk" path="res://Tilesets/Worlds/16x16 Dungeon World/16x16DungeonLayer2.tscn" id="3_mrl8s"]
+[ext_resource type="PackedScene" uid="uid://kbqa0mqh6dt2" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Spikes/RedBlueSpikes.tscn" id="4_r1c3w"]
+
+[node name="16x16DungeonWorld" type="Node2D" unique_id=902656779]
+y_sort_enabled = true
+script = ExtResource("1_gkdrm")
+
+[node name="16x16DungeonLayer1" parent="." unique_id=918604011 instance=ExtResource("2_d3tv1")]
+tile_map_data = PackedByteArray("AAAFABYAAgAAAAEAAAAFABcAAgAAAAEAAAAFABgAAgAAAAEAAAAFABkAAgAAAAEAAAAMABYAAgAAAAEAAAAMABcAAgAAAAEAAAAMABgAAgAAAAEAAAAFABoAAgAAAAEAAAAFABsAAgAAAAEAAAAFABwAAgAAAAEAAAAFAB0AAgAAAAEAAAAFAB4AAgAAAAEAAAAMABwAAgAAAAEAAAAMAB0AAgAAAAEAAAAMAB4AAgAAAAEAAAAMABkAAgAAAAEAAAAMABoAAgAAAAEAAAAMABsAAgAAAAEAAAAFAB8AAgAAAAEAAAAFACAAAgAAAAEAAAAFACEAAgAAAAEAAAAFACIAAgAAAAEAAAAFACMAAgAAAAEAAAAFACQAAgAAAAEAAAAMACIAAgAAAAEAAAAMACMAAgAAAAEAAAAMACQAAgAAAAEAAAAMACUAAgAAAAEAAAAMACYAAgAAAAEAAAAMACcAAgAAAAEAAAAMACgAAgAAAAEAAAAFACUAAgADAAIAAAAEACUAAgACAAMAAAADACUAAgACAAMAAAACACUAAgACAAMAAAABACUAAgACAAMAAAAAACUAAgACAAMAAAD//yUAAgABAAIAAAD//yQAAgABAAAAAAAAACQAAgACAAMAAAABACQAAgACAAMAAAACACQAAgACAAMAAAADACQAAgACAAMAAAAEACQAAgADAAIAAAAEACMAAgAAAAEAAAAEACIAAgAAAAEAAAAEACEAAgAAAAEAAAAEACAAAgAAAAEAAAAEAB8AAgADAAAAAAADAB8AAgACAAMAAAACAB8AAgACAAMAAAABAB8AAgACAAMAAAAAAB8AAgACAAMAAAD//x8AAgACAAMAAAD+/x8AAgACAAMAAAD9/x8AAgACAAMAAAAMACkAAgADAAIAAAALACkAAgACAAMAAAAHACkAAgACAAMAAAAGACkAAgACAAMAAAAFACkAAgACAAMAAAAEACkAAgACAAMAAAADACkAAgACAAMAAAACACkAAgACAAMAAAABACkAAgACAAMAAAAAACkAAgACAAMAAAD//ykAAgACAAMAAAD+/ykAAgACAAMAAAD9/ykAAgACAAMAAAD8/ykAAgACAAMAAAD7/ykAAgACAAMAAAA=")
+
+[node name="16x16DungeonLayer2" parent="." unique_id=1447181767 instance=ExtResource("2_d3tv1")]
+z_index = -2
+
+[node name="16x16DungeonLayer3" parent="." unique_id=244245740 instance=ExtResource("3_mrl8s")]
+
+[node name="16x16DungeonLayer4" parent="." unique_id=1430321090 instance=ExtResource("3_mrl8s")]
+z_index = 1
+
+[node name="RedBlueSpikes7" parent="." unique_id=895502531 instance=ExtResource("4_r1c3w")]
+position = Vector2(208, 720)
+
+[node name="RedBlueSpikes8" parent="." unique_id=838921722 instance=ExtResource("4_r1c3w")]
+position = Vector2(240, 720)
+
+[node name="RedBlueSpikes9" parent="." unique_id=10781427 instance=ExtResource("4_r1c3w")]
+position = Vector2(272, 720)
+
+[node name="RedBlueSpikes10" parent="." unique_id=1967801307 instance=ExtResource("4_r1c3w")]
+position = Vector2(304, 720)
+color = 1
+
+[node name="RedBlueSpikes11" parent="." unique_id=491527145 instance=ExtResource("4_r1c3w")]
+position = Vector2(336, 720)
+color = 1
+
+[node name="RedBlueSpikes12" parent="." unique_id=263760579 instance=ExtResource("4_r1c3w")]
+position = Vector2(368, 720)
+color = 1
+
+[node name="RedBlueSpikes" parent="." unique_id=789351489 instance=ExtResource("4_r1c3w")]
+position = Vector2(400, 1008)
+color = 1
+
+[node name="RedBlueSpikes2" parent="." unique_id=402543589 instance=ExtResource("4_r1c3w")]
+position = Vector2(400, 1040)
+color = 1
+
+[node name="RedBlueSpikes3" parent="." unique_id=1623417652 instance=ExtResource("4_r1c3w")]
+position = Vector2(400, 1072)
+color = 1
+
+[node name="RedBlueSpikes4" parent="." unique_id=1693358528 instance=ExtResource("4_r1c3w")]
+position = Vector2(272, 1328)
+
+[node name="RedBlueSpikes5" parent="." unique_id=270506524 instance=ExtResource("4_r1c3w")]
+position = Vector2(304, 1328)
+
+[node name="RedBlueSpikes6" parent="." unique_id=220653822 instance=ExtResource("4_r1c3w")]
+position = Vector2(336, 1328)
