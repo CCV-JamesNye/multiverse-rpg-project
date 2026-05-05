@@ -1,0 +1,37 @@
+[gd_scene format=3 uid="uid://yvwcsd8qhan0"]
+
+[ext_resource type="Script" uid="uid://bofiv80dhqtb1" path="res://Scenes/General Use Scenes/General Use Scripts/health_potion.gd" id="1_08isv"]
+[ext_resource type="Texture2D" uid="uid://ybhofqkj78c5" path="res://Tilesets/Worlds/16x16 Dungeon World/0x72_DungeonTilesetII_v1.7.png" id="1_dq43x"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_08isv"]
+atlas = ExtResource("1_dq43x")
+region = Rect2(288, 336, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x0qt2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_08isv")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dq43x"]
+size = Vector2(10, 11)
+
+[node name="HealthPotion" type="Area2D" unique_id=1628260484]
+y_sort_enabled = true
+scale = Vector2(2, 2)
+collision_mask = 2
+script = ExtResource("1_08isv")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=314022602]
+sprite_frames = SubResource("SpriteFrames_x0qt2")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1166357195]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_dq43x")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

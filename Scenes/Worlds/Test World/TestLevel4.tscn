@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://blm35oqs13irk" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/LittleCreacher.tscn" id="10_usa7k"]
 [ext_resource type="PackedScene" uid="uid://dd6pmmsd6w2ca" path="res://Scenes/General Use Scenes/WanderMarker.tscn" id="11_o5wrk"]
 [ext_resource type="PackedScene" uid="uid://dk3qwx6xirsau" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/MovingDemonCreacher.tscn" id="12_mcngo"]
+[ext_resource type="PackedScene" uid="uid://yvwcsd8qhan0" path="res://Scenes/General Use Scenes/HealthPotion.tscn" id="13_8p2l6"]
 
 [node name="TestLevel4" type="Node2D" unique_id=1390013160]
 script = ExtResource("1_mylik")
@@ -60,7 +61,6 @@ color = 1
 
 [node name="DemonCreacher" parent="." unique_id=1635130276 instance=ExtResource("9_1vs7r")]
 position = Vector2(791, 166)
-patrol_speed = 90.0
 
 [node name="LittleCreacher" parent="." unique_id=286966731 instance=ExtResource("10_usa7k")]
 position = Vector2(532, 393)
@@ -82,3 +82,6 @@ wander_id = 3
 [node name="MovingDemonCreacher" parent="." unique_id=755633044 instance=ExtResource("12_mcngo")]
 position = Vector2(491, 243)
 patrol_speed = 100.0
+
+[node name="HealthPotion" parent="." unique_id=1628260484 instance=ExtResource("13_8p2l6")]
+position = Vector2(240, 367)

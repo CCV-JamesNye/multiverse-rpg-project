@@ -11,6 +11,7 @@ signal wander_id_sent
 var wander_marker_position : Vector2
 signal wander_id_received
 var wander_enemy_type : String
+signal player_heal
 
 func plr_die():
 	SceneTransition.save_scene()

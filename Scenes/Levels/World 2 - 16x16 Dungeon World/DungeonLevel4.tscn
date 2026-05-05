@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://kbqa0mqh6dt2" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Red and Blue/Spikes/RedBlueSpikes.tscn" id="4_c5bbt"]
 [ext_resource type="PackedScene" uid="uid://brrjy2bctx1fc" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Switch/DungeonSwitch.tscn" id="5_nmqmf"]
 [ext_resource type="PackedScene" uid="uid://dwre44a42hvlo" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Door/DungeonDoor.tscn" id="6_y4ig5"]
+[ext_resource type="PackedScene" uid="uid://yvwcsd8qhan0" path="res://Scenes/General Use Scenes/HealthPotion.tscn" id="7_fspjk"]
 
 [node name="16x16DungeonWorld" type="Node2D" unique_id=902656779]
 y_sort_enabled = true
@@ -144,3 +145,6 @@ button_id = 1
 [node name="DungeonDoor" parent="." unique_id=995399566 instance=ExtResource("6_y4ig5")]
 position = Vector2(1344, 1120)
 door_id = 1
+
+[node name="HealthPotion" parent="." unique_id=1628260484 instance=ExtResource("7_fspjk")]
+position = Vector2(1319, 1040)

@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://c148aqi17mn3s" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Button/HiddenLabButton.tscn" id="6_xx3sp"]
 [ext_resource type="PackedScene" uid="uid://mytra8ictqek" path="res://Scenes/Levels/World 1 - Hidden Lab World/LabLevel5.tscn" id="8_t1nh4"]
 [ext_resource type="PackedScene" uid="uid://b22sfalt0yloo" path="res://Scenes/Levels/World 1 - Hidden Lab World/LabLevel6.tscn" id="12_dq8h8"]
+[ext_resource type="PackedScene" uid="uid://yvwcsd8qhan0" path="res://Scenes/General Use Scenes/HealthPotion.tscn" id="13_cdqb3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s00jk"]
 size = Vector2(20, 66)
@@ -209,3 +210,6 @@ collision_mask = 30
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D18" unique_id=1091190672]
 position = Vector2(-58, 199)
 shape = SubResource("RectangleShape2D_s00jk")
+
+[node name="HealthPotion" parent="." unique_id=1628260484 instance=ExtResource("13_cdqb3")]
+position = Vector2(1857, -295)

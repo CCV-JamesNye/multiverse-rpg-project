@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://bmce14j1h606" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/DemonCreacher.tscn" id="5_ohccu"]
 [ext_resource type="PackedScene" uid="uid://dk3qwx6xirsau" path="res://Scenes/Worlds/16x16 Dungeon World/Enemies/MovingDemonCreacher.tscn" id="6_3eohf"]
 [ext_resource type="PackedScene" uid="uid://brrjy2bctx1fc" path="res://Scenes/Worlds/16x16 Dungeon World/Puzzle Stuff/Switch/DungeonSwitch.tscn" id="7_q8dha"]
+[ext_resource type="PackedScene" uid="uid://yvwcsd8qhan0" path="res://Scenes/General Use Scenes/HealthPotion.tscn" id="8_q8dha"]
 
 [node name="16x16DungeonWorld" type="Node2D" unique_id=902656779]
 y_sort_enabled = true
@@ -55,3 +56,9 @@ patrol_speed = 120.0
 [node name="DungeonSwitch" parent="." unique_id=1469508311 instance=ExtResource("7_q8dha")]
 position = Vector2(-443, 1065)
 button_id = 2
+
+[node name="HealthPotion" parent="." unique_id=1628260484 instance=ExtResource("8_q8dha")]
+position = Vector2(-123, 1362)
+
+[node name="HealthPotion2" parent="." unique_id=1605843331 instance=ExtResource("8_q8dha")]
+position = Vector2(-63, 1359)

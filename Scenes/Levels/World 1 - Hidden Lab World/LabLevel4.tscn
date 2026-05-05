@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cmoqqmqjw6hcr" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Door/HiddenLabSmallDoor.tscn" id="6_vwpmh"]
 [ext_resource type="PackedScene" uid="uid://bg3kq8dbxy7n3" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Door/HiddenLabDoor.tscn" id="7_gyg53"]
 [ext_resource type="PackedScene" uid="uid://c148aqi17mn3s" path="res://Scenes/Worlds/Hidden Lab World/Puzzle Stuff/Button/HiddenLabButton.tscn" id="8_3fkw0"]
+[ext_resource type="PackedScene" uid="uid://yvwcsd8qhan0" path="res://Scenes/General Use Scenes/HealthPotion.tscn" id="9_3fkw0"]
 
 [node name="HiddenLabWorld" type="Node2D" unique_id=418888131]
 y_sort_enabled = true
@@ -45,3 +46,6 @@ door_id = 3
 [node name="HiddenLabButton" parent="." unique_id=1469508311 instance=ExtResource("8_3fkw0")]
 position = Vector2(1467, 211)
 button_id = 3
+
+[node name="HealthPotion" parent="." unique_id=1628260484 instance=ExtResource("9_3fkw0")]
+position = Vector2(2032, 304)

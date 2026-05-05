@@ -19,6 +19,7 @@ var is_dying : bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	hurtbox.send_damage.connect(take_damage)
+	GameManager.player_heal.connect(heal)
 	animated_sprite_2d.play("idle_down")
 	
 	if RoomChangeHandler.activate == true:
@@ -122,6 +123,11 @@ func attack():
 		animation_player.play("sword_up")
 	if facing == "down":
 		animation_player.play("sword_down")
+
+func heal():
+	health += 5
+	health_update.emit(health)
+	animation_player_2.play("heal")
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_attacking == true:
