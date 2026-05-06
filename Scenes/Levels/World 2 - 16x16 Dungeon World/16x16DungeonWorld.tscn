@@ -1,6 +1,7 @@
 [gd_scene format=4 uid="uid://b5lvuv8poe556"]
 
 [ext_resource type="Script" uid="uid://c31tlubwwnm5y" path="res://Scenes/Levels/World 2 - 16x16 Dungeon World/Scripts/16x16_dungeon_world.gd" id="1_wenjc"]
+[ext_resource type="AudioStream" uid="uid://casr1g63q5re3" path="res://Audio/Music/Ethernight Club.mp3" id="2_ac5y0"]
 [ext_resource type="PackedScene" uid="uid://c3rvlmrgae2wc" path="res://Scenes/Levels/World 2 - 16x16 Dungeon World/DungeonLevel2.tscn" id="2_te3dm"]
 [ext_resource type="PackedScene" uid="uid://cfeyflicd1fg1" path="res://Tilesets/Worlds/16x16 Dungeon World/16x16DungeonLayer1.tscn" id="2_tsrbb"]
 [ext_resource type="PackedScene" uid="uid://dl238hjps8nvc" path="res://Scenes/Levels/World 2 - 16x16 Dungeon World/DungeonLevel3.tscn" id="3_jm18i"]
@@ -17,6 +18,12 @@
 [node name="16x16DungeonWorld" type="Node2D" unique_id=902656779]
 y_sort_enabled = true
 script = ExtResource("1_wenjc")
+
+[node name="BGM" type="AudioStreamPlayer" parent="." unique_id=2119518957]
+stream = ExtResource("2_ac5y0")
+volume_db = 2.0
+autoplay = true
+parameters/looping = true
 
 [node name="16x16DungeonWorld" parent="." unique_id=634819478 instance=ExtResource("2_te3dm")]
 

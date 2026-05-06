@@ -281,4 +281,4 @@ position = Vector2(71, 1697)
 
 [node name="WorldlessTV" parent="." unique_id=733644053 instance=ExtResource("10_yffpm")]
 position = Vector2(564, 1121)
-next_world = "res://Scenes/UI/WinScreen.tscn"
+next_world = "res://Scenes/Levels/World 3 - [!#@$R#W@] (Finale)/FinaleWorld.tscn"

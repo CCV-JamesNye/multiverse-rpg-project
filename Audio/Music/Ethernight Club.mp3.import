@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://casr1g63q5re3"
+path="res://.godot/imported/Ethernight Club.mp3-c5828cc068b14027504a78ea6335827b.mp3str"
+
+[deps]
+
+source_file="res://Audio/Music/Ethernight Club.mp3"
+dest_files=["res://.godot/imported/Ethernight Club.mp3-c5828cc068b14027504a78ea6335827b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
