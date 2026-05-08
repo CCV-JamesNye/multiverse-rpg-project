@@ -974,6 +974,7 @@ tile_set = SubResource("TileSet_gdmky")
 
 [node name="HiddenLabLayer4" parent="." unique_id=1630976752 instance=ExtResource("5_rfiok")]
 z_index = 1
+tile_map_data = PackedByteArray("AABXACYAAQAAAAgAAABTACYAAQAOAAAAAAA=")
 
 [node name="16x16DungeonLayer3" parent="." unique_id=244245740 instance=ExtResource("6_le1cj")]
 
