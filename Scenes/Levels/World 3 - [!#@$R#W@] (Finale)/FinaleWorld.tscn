@@ -65,14 +65,14 @@ z_index = 1
 tile_map_data = PackedByteArray("AABIAAYAAAABAA8AAABLAAYAAAAEAA8AAAA=")
 
 [node name="Player" parent="." unique_id=642040466 instance=ExtResource("7_pmfj6")]
-position = Vector2(247, 108)
+position = Vector2(227, 110)
 
 [node name="Camera2D" type="Camera2D" parent="Player" unique_id=820230244]
 zoom = Vector2(1.3, 1.3)
 limit_left = -64
 limit_top = -28
 limit_right = 5760
-limit_bottom = 2180
+limit_bottom = 2784
 position_smoothing_enabled = true
 position_smoothing_speed = 8.0
 
