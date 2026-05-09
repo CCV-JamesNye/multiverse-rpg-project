@@ -127,7 +127,11 @@ func attack():
 func heal():
 	health += 5
 	health_update.emit(health)
+	GameManager.plr_health = health
 	animation_player_2.play("heal")
+	if health > 10:
+		health = 10
+		GameManager.plr_health = health
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	if is_attacking == true:

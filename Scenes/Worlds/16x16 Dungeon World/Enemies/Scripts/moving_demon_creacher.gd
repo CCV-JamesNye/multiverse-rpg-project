@@ -60,12 +60,10 @@ func _physics_process(delta: float) -> void:
 		if direction == Vector2.RIGHT:
 			direction = Vector2.LEFT
 			facing = "left"
-			wall_detector.position.y = -15
 			wall_detector.rotate(deg_to_rad(180))
 		elif direction == Vector2.LEFT:
 			direction = Vector2.RIGHT
 			facing = "right"
-			wall_detector.position.y = 0
 			wall_detector.rotate(deg_to_rad(180))
 
 func handle_idle() -> void:
